@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 # pruebaSAPYENTIA
-Esta es una prueba del software SAPYIENTIA.
+Esta es una prueba del software SAPYENTIA.
 =======
 # PROYECTO SAPYENTIA
 
@@ -12,5 +11,3 @@ Este es un proyecto que sera realizado en la materia de Ingeniería de software 
 - Machorro Meléndez Hugo Andrés
 - Macias Carmona Jesús Eduardo
 - Macias Carmona Luis Ángel
-
->>>>>>> b61d7f3ab14258814e060683f5ebf4abf981255e
