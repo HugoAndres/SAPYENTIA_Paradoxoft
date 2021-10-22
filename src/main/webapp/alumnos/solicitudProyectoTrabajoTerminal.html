@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es-419" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Generar solicitud de proyecto de trabajo terminal | SAPYENTIA</title>
+        <link rel="shortcut icon" href="../recursos/ico/monogramaSAPYENTIA.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="../recursos/css/estilosPrincipales.css" />
+    </head>
+    <body>
+        <nav>
+            <header>SAPYENTIA</header>
+        </nav>
+        <section>
+            <h1>Generar solicitud de proyecto de trabajo terminal</h1>
+            <p>
+                ¿Ya tienes una propuesta de trabajo terminal para iniciar a desarrollar tu proyecto?
+                Envíala para que sea revisada por los profesores sinodales que te acompañarán durante el resto del proceso.
+                Llena los datos del formulario siguiente para iniciar tu solicitud de creación de proyecto de trabajo terminal.
+                Recuerda que debes haber conseguido un profesor director de tu trabajo terminal y, opcionalmente, profesores codirectores,
+                los cuales han de haber dado visto bueno a la propuesta que adjuntarás.
+            </p>
+            <form action="GenerarSolicitudProyectoTrabajoTerminal" method="post" target="_self">
+                <label>
+                    Título del trabajo terminal:
+                    <input type="text" name="titulo" required="required" />
+                </label>
+                <label>
+                    Autor(es):
+                    <input type="text" name="autor1" required="required" />
+                </label>
+                <button>+</button>
+                <label>
+                    Director:
+                    <input type="text" name="director" placeholder="Descripción de la categoría" required="required" />
+                </label>
+                <label>
+                    Codirectores:
+                    <input type="text" name="codirector1" required="required" />
+                </label>
+                <button>+</button>
+                <label>
+                    Institución de origen:
+                    <input type="text" name="institucion" required="required" />
+                </label>
+                <label>
+                    Unidad académica:
+                    <input type="text" name="unidadAcademica" required="required" />
+                </label>
+                <label>
+                    Palabras clave:
+                    <input type="text" name="palabraClave1" required="required" />
+                </label>
+                <button>+</button>
+                <label>
+                    Archivo de propuesta:
+                    <input type="file" name="rutaArchivoPropuesta" accept="application/pdf" required="required">
+                </label>
+                <input type="submit" value="Generar solicitud" />
+            </form>
+        </section>
+    </body>
+</html>

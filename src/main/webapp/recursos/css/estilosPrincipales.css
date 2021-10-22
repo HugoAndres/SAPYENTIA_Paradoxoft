@@ -1,0 +1,63 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: 'Raleway';
+  src: url("../fuentes/static/Raleway-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root{
+    /*VARIABLES*/
+    /*Colores*/
+    --color-fondo: #9999ff;
+    --color-primario: #333399;
+    /*Fuentes primarias*/
+    --fuente-primaria: 'Raleway';
+    --fuente-primaria-alt1: Verdana;
+    --fuente-primaria-alt2: sans-serif;
+    /*Fuentes secundarias*/
+    --fuente-secundaria: 'Segoe UI';
+    --fuente-secundaria-alt1: Arial;
+    --fuente-secundaria-alt2: sans-serif;
+}
+
+html{
+    writing-mode: horizontal-tb;
+}
+
+body, h1{
+    margin: 0px;
+    padding: 0px;
+}
+
+header nav{
+    /*Display*/
+    display: flex;
+    /*Caja*/
+    padding: 10px;
+    /*Colores*/
+    background-color: var(--color-primario);
+}
+
+#logoSAPYENTIA{
+    /*Display*/
+    display: block;
+    /*Caja*/
+    height: 40px;
+    /*Colores*/
+    background-color: #ffcc99;
+}
+
+span{
+    background-color: #ffcc99;
+}
+
+section{
+    background-color: var(--color-fondo);
+}
+
+section h1{
+    /*Texto*/
+    font-family: var(--fuente-primaria), var(--fuente-primaria-alt1), var(--fuente-primaria-alt2);
+}
