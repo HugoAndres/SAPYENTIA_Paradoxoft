@@ -1,0 +1,73 @@
+:root{
+    /*VARIABLES*/
+    /*Colores*/
+    --color-fondo: #9999ff;
+    --color-primario: #333399;
+    /*Fuentes primarias*/
+    --fuente-primaria: 'Raleway';
+    --fuente-primaria-alt1: Verdana;
+    --fuente-primaria-alt2: sans-serif;
+    /*Fuentes secundarias*/
+    --fuente-secundaria: 'Segoe UI';
+    --fuente-secundaria-alt1: Arial;
+    --fuente-secundaria-alt2: sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;   
+}
+
+nav{
+    display: flex;
+    padding: 10px;
+    background-color: var(--color-primario);
+    
+}
+
+#informacionMetadatos{
+    background-color: var(--color-fondo);
+    border-radius: 1rem;
+    padding: 1rem;
+    font-family: var(--fuente-primaria), var(--fuente-primaria-alt1), var(--fuente-primaria-alt2);
+    ;
+}
+
+.metadatos {
+    background-color: var(--color-primario);
+    padding: 1rem;
+    margin: 1rem;
+    text-align: center;
+}
+
+.contenedor{
+    display: flex;
+    margin: 1rem;
+}
+
+.descarga{
+    background-color: red;
+    align-content: center;
+}
+
+#visorpdf{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    text-align: center;
+}
+
+#visorpdf object{
+    width: 65rem;
+    height: 35rem;
+    margin-bottom: 2rem; 
+}
+
+#visorpdf button{
+    padding: 0.5rem;
+    justify-content: center;
+    background-color: green;
+    font-size: 1rem;
+    font-family: var(--fuente-primaria), var(--fuente-primaria-alt1), var(--fuente-primaria-alt2);
+    border-radius: 1rem;
+}
