@@ -1,17 +1,13 @@
 @charset "utf-8";
 
-@font-face {
-  font-family: 'Raleway';
-  src: url("../fuentes/static/Raleway-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
+@import url("reglasDeImportaciónDeFuentes.css");
 
 :root{
     /*VARIABLES*/
     /*Colores*/
     --color-fondo: #9999ff;
     --color-primario: #333399;
+    --color-secundario: #505080;
     /*Fuentes primarias*/
     --fuente-primaria: 'Raleway';
     --fuente-primaria-alt1: Verdana;
@@ -31,11 +27,20 @@ body, h1{
     padding: 0px;
 }
 
+header{
+    /*Display*/
+    position: sticky;
+    top: 0px;
+}
+
 header nav{
     /*Display*/
     display: flex;
     /*Caja*/
-    padding: 10px;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+    padding-left: 15px;
     /*Colores*/
     background-color: var(--color-primario);
 }
@@ -45,19 +50,35 @@ header nav{
     display: block;
     /*Caja*/
     height: 40px;
+}
+
+#cuerpo{
+    /*Display*/
+    display: flex;
+    /*Caja*/
+    min-height: 90vh;
     /*Colores*/
-    background-color: #ffcc99;
-}
-
-span{
-    background-color: #ffcc99;
-}
-
-section{
     background-color: var(--color-fondo);
-}
-
-section h1{
     /*Texto*/
     font-family: var(--fuente-primaria), var(--fuente-primaria-alt1), var(--fuente-primaria-alt2);
+}
+
+footer{
+    /*Display*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*Caja*/
+    min-height: 10vh;
+    /*Colores*/
+    background-color: var(--color-secundario);
+    color: white;
+    /*Texto*/
+    font-family: var(--fuente-primaria), var(--fuente-primaria-alt1), var(--fuente-primaria-alt2);
+    font-weight: 300;
+    font-style: italic;
+}
+
+footer p{
+    text-align: center;
 }

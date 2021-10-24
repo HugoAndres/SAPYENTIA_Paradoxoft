@@ -1,0 +1,173 @@
+@charset "utf-8";
+
+@import url("estilosPrincipales.css");
+
+#cuerpo{
+    /*Display*/
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+main{
+    /*Caja*/
+    width: 90%;
+    padding: 30px;
+    box-sizing: border-box;
+    /*Colores*/
+    background-color: white;
+}
+
+main > div{
+    /*Caja*/
+    display: flex;
+    flex-wrap: wrap;
+}
+
+form{
+    /*Display*/
+    flex-grow: 2;
+    flex-shrink: 2;
+    flex-basis: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    row-gap: 10px;
+    /*Caja*/
+    padding: 20px;
+    /*Colores*/
+    background-color: var(--color-secundario);
+}
+
+.inputNormal, form > label, form > div{
+    /*Display*/
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: auto;
+    box-sizing: border-box;
+    /*Caja*/
+    width: 50%;
+}
+
+/*@media (max-width: 695px){
+    .inputNormal, form > label, form > div{
+        width: 100%;
+    }
+}*/
+
+.inputNormal{
+    /*Caja*/
+    margin-top: 5px;
+    border-radius: 10px;
+}
+
+form label{
+    /*Caja*/
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    /*Colores*/
+    color: white;
+    /*Texto*/
+    font-weight: 500;
+    font-size: 1.1rem;
+    text-align: end;
+}
+
+form input{
+    /*Caja*/
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    border-radius: 0px;
+    border-style: solid;
+    border-width: 1px;
+    /*Texto*/
+    font-family: var(--fuente-primaria), var(--fuente-primaria-alt1), var(--fuente-primaria-alt2);
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+form input:focus, form button:focus{
+    outline-color: var(--color-primario);
+    outline-offset: -2px;
+    outline-style: dashed;
+    outline-width: 1px;
+}
+
+form > div{
+    /*Display*/
+    display: flex;
+    row-gap: 10px;
+    flex-wrap: wrap;
+    /*Caja*/
+    margin-top: 5px;
+}
+
+.campoConBoton{
+    /*Display*/
+    display: flex;
+    overflow: hidden;
+    /*Caja*/
+    width: 100%;
+    border-style: solid;
+    border-color: #767676;
+    border-width: 1px;
+    border-radius: 10px;
+}
+
+
+.campoConBoton input{
+    /*Display*/
+    flex-grow: 7;
+    flex-shrink: 7;
+    flex-basis: 0;
+    /*Caja*/
+    border-width: 0px;
+}
+
+.campoConBoton button{
+    /*Display*/
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    /*Caja*/
+    border-style: solid;
+    border-width: 1px;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-radius: 0px;
+}
+
+#botonSubmit{
+    /*Caja*/
+    width: 100%;
+}
+
+main > div > img{
+    /*Display*/
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    display: block;
+}
+
+/*form #botonSubmit{*/
+    /*Caja*/
+    /*padding-right: 20px;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-bottom: 10px;*/
+    /*Colores*/
+    /*color: white;
+    background-color: var(--color-secundario);
+    border-width: 0px;*/
+/*}*/
+
+/*form #botonSubmit:hover{*/
+    /*Display*/
+    /*cursor: pointer;*/
+    /*Colores*/
+    /*background-color: var(--color-terciario);*/
+/*}*/

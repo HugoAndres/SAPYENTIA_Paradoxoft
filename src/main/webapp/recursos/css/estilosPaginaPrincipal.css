@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+@import url("estilosPrincipales.css");
+
+#cuerpo{
+    /*Display*/
+    justify-content: space-around;
+    align-items: center;
+}
+
+main{
+    /*Display*/
+    background-color: var(--color-secundario);
+    /*Caja*/
+    width: 90%;
+    /*Texto*/
+    text-align: center;
+    color: white;
+}
+
+main h1{
+    /*Colores*/
+    font-size: 3rem;
+}
