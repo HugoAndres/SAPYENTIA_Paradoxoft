@@ -17,16 +17,23 @@ main{
     background-color: white;
 }
 
+main > p{
+    text-align: justify;
+}
+
 main > div{
     /*Caja*/
     display: flex;
+    justify-content: center;
+    align-items: flex-start;
     flex-wrap: wrap;
+    column-gap: 40px;
 }
 
 form{
     /*Display*/
-    flex-grow: 2;
-    flex-shrink: 2;
+    flex-grow: 1;
+    flex-shrink: 1;
     flex-basis: 0;
     display: flex;
     flex-wrap: wrap;
@@ -34,8 +41,17 @@ form{
     row-gap: 10px;
     /*Caja*/
     padding: 20px;
+    min-width: 500px;
     /*Colores*/
     background-color: var(--color-secundario);
+}
+
+@media (max-width: 700px){
+    form{
+        min-width: 100px;
+        width: 100%;
+        flex-basis: auto;
+    }
 }
 
 .inputNormal, form > label, form > div{
@@ -48,11 +64,11 @@ form{
     width: 50%;
 }
 
-/*@media (max-width: 695px){
+@media (max-width: 700px){
     .inputNormal, form > label, form > div{
         width: 100%;
     }
-}*/
+}
 
 .inputNormal{
     /*Caja*/
@@ -150,7 +166,16 @@ main > div > img{
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: 0;
-    display: block;
+    /*Caja*/
+    min-width: 300px;
+    max-width: 500px;
+}
+
+@media (max-width: 700px){
+    main > div > img{
+        /*Caja*/
+        min-width: 0;
+    }
 }
 
 /*form #botonSubmit{*/
