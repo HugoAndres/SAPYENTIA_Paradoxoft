@@ -1,0 +1,68 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.paradoxoft.mx.dto;
+
+import com.paradoxoft.mx.modelo.Usuario;
+
+/**
+ *
+ * @author user
+ */
+public class DirectorDTO extends Usuario{
+    private int academiaDocente;
+    private String nombreAcademiaDocente;
+    private String grado;
+    private boolean director;
+    
+    public DirectorDTO(){
+        super();
+    }
+
+    public DirectorDTO(int academiaDocente, String nombreAcademiaDocente, String grado, boolean director) {
+        this.academiaDocente = academiaDocente;
+        this.nombreAcademiaDocente = nombreAcademiaDocente;
+        this.grado = grado;
+        this.director = director;
+    }
+
+    
+    public int getAcademiaDocente() {
+        return academiaDocente;
+    }
+
+    public void setAcademiaDocente(int academiaDocente) {
+        this.academiaDocente = academiaDocente;
+    }
+
+    public String getNombreAcademiaDocente() {
+        return nombreAcademiaDocente;
+    }
+
+    public void setNombreAcademiaDocente(String nombreAcademiaDocente) {
+        this.nombreAcademiaDocente = nombreAcademiaDocente;
+    }
+
+    public String getGrado() {
+        return grado;
+    }
+
+    public void setGrado(String grado) {
+        this.grado = grado;
+    }
+
+    public boolean isDirector() {
+        return director;
+    }
+
+    public void setDirector(boolean director) {
+        this.director = director;
+    }
+
+    @Override
+    public String toString() {
+        return "DirectorDTO{" +super.toString()+ " academiaDocente=" + academiaDocente + ", nombreAcademiaDocente=" + nombreAcademiaDocente + ", grado=" + grado + ", director=" + director + '}';
+    }
+}
