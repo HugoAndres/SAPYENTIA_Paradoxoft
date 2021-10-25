@@ -5,9 +5,10 @@
 :root{
     /*VARIABLES*/
     /*Colores*/
-    --color-fondo: #9999ff;
-    --color-primario: #333399;
-    --color-secundario: #505080;
+    --color-fondo: #9999ff;/*Azul*/
+    --color-primario: #333399;/*Morado del nav*/
+    --color-secundario: #505080; /*Morado del footer*/
+    --color-terciario: #0099cc;/*Azul claro del hover del nav*/
     /*Fuentes primarias*/
     --fuente-primaria: 'Raleway';
     --fuente-primaria-alt1: Verdana;
@@ -37,9 +38,7 @@ header nav{
     /*Display*/
     display: flex;
     /*Caja*/
-    padding-top: 15px;
     padding-right: 15px;
-    padding-bottom: 10px;
     padding-left: 15px;
     /*Colores*/
     background-color: var(--color-primario);
@@ -50,6 +49,15 @@ header nav{
     display: block;
     /*Caja*/
     height: 40px;
+    padding-top: 15px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+#logoSAPYENTIA:hover{
+    /*Colores*/
+    background-color: var(--color-terciario);
 }
 
 #cuerpo{

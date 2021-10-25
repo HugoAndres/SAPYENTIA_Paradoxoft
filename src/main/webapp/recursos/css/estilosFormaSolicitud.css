@@ -22,12 +22,15 @@ main > p{
 }
 
 main > div{
-    /*Caja*/
+    /*Display*/
     display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
     column-gap: 40px;
+    row-gap: 40px;
+    /*Caja*/
+    margin-top: 40px;
 }
 
 form{
@@ -161,6 +164,13 @@ form > div{
     width: 100%;
 }
 
+form button:hover, #botonSubmit:hover{
+    /*Display*/
+    cursor: pointer;
+    /*Colores*/
+    background-color: var(--color-terciario);
+}
+
 main > div > img{
     /*Display*/
     flex-grow: 1;
@@ -177,22 +187,3 @@ main > div > img{
         min-width: 0;
     }
 }
-
-/*form #botonSubmit{*/
-    /*Caja*/
-    /*padding-right: 20px;
-    padding-top: 10px;
-    padding-left: 20px;
-    padding-bottom: 10px;*/
-    /*Colores*/
-    /*color: white;
-    background-color: var(--color-secundario);
-    border-width: 0px;*/
-/*}*/
-
-/*form #botonSubmit:hover{*/
-    /*Display*/
-    /*cursor: pointer;*/
-    /*Colores*/
-    /*background-color: var(--color-terciario);*/
-/*}*/
