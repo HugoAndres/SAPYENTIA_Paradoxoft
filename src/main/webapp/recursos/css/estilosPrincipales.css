@@ -2,7 +2,22 @@
 
 @import url("reglasDeImportaciónDeFuentes.css");
 
-
+:root{
+    /*VARIABLES*/
+    /*Colores*/
+    --color-fondo: #9999ff;/*Azul*/
+    --color-primario: #333399;/*Morado del nav*/
+    --color-secundario: #505080; /*Morado del footer*/
+    --color-terciario: #0099cc;/*Azul claro del hover del nav*/
+    /*Fuentes primarias*/
+    --fuente-primaria: 'Raleway';
+    --fuente-primaria-alt1: Verdana;
+    --fuente-primaria-alt2: sans-serif;
+    /*Fuentes secundarias*/
+    --fuente-secundaria: 'Segoe UI';
+    --fuente-secundaria-alt1: Arial;
+    --fuente-secundaria-alt2: sans-serif;
+}
 
 html{
     writing-mode: horizontal-tb;
@@ -13,6 +28,11 @@ body, h1{
     padding: 0px;
 }
 
+header{
+    /*Display*/
+    position: sticky;
+    top: 0px;
+}
 
 header nav{
     /*Display*/
@@ -24,7 +44,21 @@ header nav{
     background-color: var(--color-primario);
 }
 
+#logoSAPYENTIA{
+    /*Display*/
+    display: block;
+    /*Caja*/
+    height: 40px;
+    padding-top: 15px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
 
+#logoSAPYENTIA:hover{
+    /*Colores*/
+    background-color: var(--color-terciario);
+}
 
 #cuerpo{
     /*Display*/

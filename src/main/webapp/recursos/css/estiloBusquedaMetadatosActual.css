@@ -2,7 +2,7 @@
 
 @import url("estilosPrincipales.css");
 
-*{
+ul{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -13,15 +13,7 @@
   height: 100%;
   align-self: baseline
 }
-.sidebar .text{
-  color: white;
-  font-size: 35px;
-  font-weight: 600;
-  line-height: 85px;
-  text-align: center;
-  background:  var(--color-fondo);
-  letter-spacing: 1px;
-}
+
 div ul{
   background: var(--color-fondo);
   height: 100%;
@@ -82,10 +74,7 @@ div ul li a span.rotate{
 div table tr td a span.rotate{
     transform: translateY(-20%) rotate(-180deg);
 }
-.content p{
-  font-size: 30px;
-  font-weight: 500;
-}
+
 div ul .tit-show.show{
   display: block;
 }
