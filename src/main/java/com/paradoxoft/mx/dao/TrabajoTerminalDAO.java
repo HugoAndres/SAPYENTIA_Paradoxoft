@@ -324,6 +324,7 @@ public class TrabajoTerminalDAO {
                 t.setUnidadAcademica(rs.getString("unidadAcademica"));
                 t.setCorreo(rs.getString("correo"));
                 t.setContra(rs.getString("contra"));
+                t.setImagen(rs.getString("imagen"));
                 t.setCarrera(rs.getString("carrera"));
                 resultados.add(t);
             }
@@ -364,6 +365,7 @@ public class TrabajoTerminalDAO {
                 t.setUnidadAcademica(rs.getString("unidadAcademica"));
                 t.setCorreo(rs.getString("correo"));
                 t.setContra(rs.getString("contra"));
+                t.setImagen(rs.getString("imagen"));
                 t.setAcademiaDocente(rs.getInt("academiaDocente"));
                 t.setNombreAcademiaDocente(rs.getString("nombreAcademia"));
                 t.setGrado(rs.getString("grado"));
@@ -407,6 +409,7 @@ public class TrabajoTerminalDAO {
                 t.setUnidadAcademica(rs.getString("unidadAcademica"));
                 t.setCorreo(rs.getString("correo"));
                 t.setContra(rs.getString("contra"));
+                t.setImagen(rs.getString("imagen"));
                 t.setAcademiaDocente(rs.getInt("academiaDocente"));
                 t.setNombreAcademiaDocente(rs.getString("nombreAcademia"));
                 t.setGrado(rs.getString("grado"));
@@ -963,6 +966,7 @@ public class TrabajoTerminalDAO {
             Logger.getLogger(AcademiaDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         */
+        
         /*
         TrabajoTerminalDAO dao = new TrabajoTerminalDAO();
         try {
@@ -982,15 +986,16 @@ public class TrabajoTerminalDAO {
             Logger.getLogger(AcademiaDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         */
-        /*
+        
+        
         TrabajoTerminalDAO dao = new TrabajoTerminalDAO();
         try {
-            List<TrabajoTerminalDTO> lista = dao.buscaTrabajoTerminalPorTitulo("semillas que sirven para la industria");
+            List<TrabajoTerminalDTO> lista = dao.buscaTrabajoTerminalPorTitulo("slas y sens");
             System.out.println(lista);
         } catch (SQLException ex) {
             Logger.getLogger(AcademiaDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        */
+        
         
         /*
         TrabajoTerminalDAO dao = new TrabajoTerminalDAO();
