@@ -156,4 +156,6 @@ main{
     flex-shrink: 10;
     flex-basis: 0;
     background-color: white;
+    /*Caja*/
+    padding: 40px;
 }
