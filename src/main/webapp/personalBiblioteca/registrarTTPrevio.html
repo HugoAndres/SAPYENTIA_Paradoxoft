@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Generar solicitud de proyecto de trabajo terminal | SAPYENTIA</title>
+        <title>Registrar un trabajo terminal previo | SAPYENTIA</title>
         <link rel="shortcut icon" href="../recursos/ico/monogramaSAPYENTIA.ico" type="image/x-icon" />
         <link rel="stylesheet" href="../recursos/css/estilosFormaSolicitud.css" />
         <script src="../recursos/js/scriptFormaTTPrevio.js"></script>
@@ -23,7 +23,7 @@
                     terminal y asegurarte de que el archivo que envíes sea del formato PDF.
                 </p>
                 <div>
-                    <form action="GenerarSolicitudProyectoTrabajoTerminal" method="post" target="_self">
+                    <form action="../AltaTrabajoTerminalPrevio" method="post" target="_self">
                         <label for="campoTitulo">Título del trabajo terminal:</label>
                         <input type="text" name="titulo" id="campoTitulo" class="inputNormal" required="required" />
                         <label for="campoNumId">Número identificador:</label>
@@ -68,7 +68,7 @@
                         <input type="file" name="rutaArchivoPropuesta" id="campoRutaArchivoPropuesta" accept="application/pdf" class="inputNormal" required="required" />
                         <label for="campoRutaArchivoTT">Archivo de trabajo terminal:</label>
                         <input type="file" name="rutaArchivoTT" id="campoRutaArchivoTT" accept="application/pdf" class="inputNormal" required="required" />
-                        <input type="submit" id="botonSubmit" value="Generar solicitud" />
+                        <input type="submit" id="botonSubmit" value="Enviar" />
                     </form>
                     <img src="../recursos/svg/libro.svg" alt="Sobre de mensaje" title="Solicitud de proyecto de trabajo terminal" id="sobreDeMensaje" />
                 </div>
