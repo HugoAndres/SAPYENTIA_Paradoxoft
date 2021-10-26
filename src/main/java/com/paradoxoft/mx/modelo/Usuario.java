@@ -18,6 +18,7 @@ public class Usuario {
     private String unidadAcademica;
     private String correo;
     private String contra;
+    private String imagen;
 
     public Usuario(){
         
@@ -79,9 +80,17 @@ public class Usuario {
         this.contra = contra;
     }
 
-    @Override
-    public String toString() {
-        return "Usuario{" + "identificador=" + identificador + ", nombres=" + nombres + ", apellidos=" + apellidos + ", institucion=" + institucion + ", unidadAcademica=" + unidadAcademica + ", correo=" + correo + ", contra=" + contra + '}';
+    public String getImagen() {
+        return imagen;
     }
 
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario{" + "identificador=" + identificador + ", nombres=" + nombres + ", apellidos=" + apellidos + ", institucion=" + institucion + ", unidadAcademica=" + unidadAcademica + ", correo=" + correo + ", contra=" + contra + ", imagen=" + imagen + '}';
+    }
+    
 }
