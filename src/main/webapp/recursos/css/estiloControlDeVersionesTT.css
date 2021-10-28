@@ -1,0 +1,99 @@
+@import url("estilosPrincipales.css");
+
+#cuerpo{
+    /*Display*/
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+.button {
+  background-color:  var(--color-primario);
+  border: none;
+  color: white;
+  padding: 30px 80px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+table {
+  border-collapse: collapse;
+
+
+}
+th, td {
+  padding: 20px;
+  font-family: var(--fuente-primaria-alt1);
+     
+}
+main{
+    /*Caja*/
+    width: 90%;
+    padding: 30px;
+    box-sizing: border-box;
+    /*Colores*/
+    background-color: white;
+}
+
+.der{
+    /*Display*/
+    width: 15%;
+    float: left;
+    /*Caja*/
+    margin-top: 20px;
+    margin-left: 6px;
+}
+.iz{
+ /*Display*/
+    width: 80%;
+    float: left;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+.drag-area{
+  border: 2px dashed var(--color-primario);
+  height: 550px;
+  width: 900px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.drag-area.active{
+  border: 2px solid var(--color-primario);
+}
+.drag-area .icon{
+  font-size: 100px;
+  color: #fff;
+}
+.drag-area button{
+  padding: 10px 25px;
+  font-size: 20px;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  background: #fff;
+  color: #5256ad;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.drag-area img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.drag-area span{
+  font-size: 25px;
+  font-weight: 500;
+  color: black;
+
+}
+.drag-area header{
+  font-size: 30px;
+  font-weight: 500;
+  color: black;
+}
