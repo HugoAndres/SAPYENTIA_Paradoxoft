@@ -57,9 +57,41 @@ header nav{
     padding-left: 10px;
 }
 
-#logoSAPYENTIA:hover{
+nav a:hover, nav button:hover{
     /*Colores*/
     background-color: var(--color-terciario);
+}
+
+nav button:hover{
+    cursor: pointer;
+}
+
+.vinculoSinImagen, nav button{
+    /*Caja*/
+    padding-right: 20px;
+    padding-left: 20px;
+    /*Texto*/
+    text-decoration: none;
+    font-family: var(--fuente-primaria), var(--fuente-primaria-alt1), var(--fuente-primaria-alt2);
+    font-weight: 400;
+    /*Colores*/
+    color: white;
+}
+
+.vinculoSinImagen{
+    /*Display*/
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+nav button{
+    /*Caja*/
+    border-style: solid;
+    border-width: 0px;
+    background-color: transparent;
+    /*Texto*/
+    font-size: 1rem;
 }
 
 #cuerpo{
