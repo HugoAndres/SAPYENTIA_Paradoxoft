@@ -12,17 +12,21 @@ package com.paradoxoft.mx.modelo;
 public class TuplaSinodal {
  
     private String idTrabajoTerminal;
+    private int idSolicitudProyecto;
+    private String numIdentificador;
     private String idSinodal;
     
     public TuplaSinodal(){
         
     }
 
-    public TuplaSinodal(String idTrabajoTerminal, String idSinodal) {
+    public TuplaSinodal(String idTrabajoTerminal, int idSolicitudProyecto, String numIdentificador, String idSinodal) {
         this.idTrabajoTerminal = idTrabajoTerminal;
+        this.idSolicitudProyecto = idSolicitudProyecto;
+        this.numIdentificador = numIdentificador;
         this.idSinodal = idSinodal;
     }
-
+    
     public String getIdTrabajoTerminal() {
         return idTrabajoTerminal;
     }
@@ -39,11 +43,25 @@ public class TuplaSinodal {
         this.idSinodal = idSinodal;
     }
 
+    public int getIdSolicitudProyecto() {
+        return idSolicitudProyecto;
+    }
+
+    public void setIdSolicitudProyecto(int idSolicitudProyecto) {
+        this.idSolicitudProyecto = idSolicitudProyecto;
+    }
+
+    public String getNumIdentificador() {
+        return numIdentificador;
+    }
+
+    public void setNumIdentificador(String numIdentificador) {
+        this.numIdentificador = numIdentificador;
+    }
+
     @Override
     public String toString() {
-        return "TuplaSinodal{" + "idTrabajoTerminal=" + idTrabajoTerminal + ", idSinodal=" + idSinodal + '}';
+        return "TuplaSinodal{" + "idTrabajoTerminal=" + idTrabajoTerminal + ", idSolicitudProyecto=" + idSolicitudProyecto + ", numIdentificador=" + numIdentificador + ", idSinodal=" + idSinodal + '}';
     }
-    
-    
     
 }

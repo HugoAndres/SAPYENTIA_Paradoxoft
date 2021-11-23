@@ -12,14 +12,18 @@ package com.paradoxoft.mx.modelo;
 public class TuplaAutor {
     
     private String idTrabajoTerminal;
+    private int idSolicitudProyecto;
+    private String numIdentificador;
     private String idAutor;
     
    public TuplaAutor(){
 
    }
 
-    public TuplaAutor(String idTrabajoTerminal, String idAutor) {
+    public TuplaAutor(String idTrabajoTerminal, int idSolicitudProyecto, String numIdentificador, String idAutor) {
         this.idTrabajoTerminal = idTrabajoTerminal;
+        this.idSolicitudProyecto = idSolicitudProyecto;
+        this.numIdentificador = numIdentificador;
         this.idAutor = idAutor;
     }
 
@@ -39,11 +43,25 @@ public class TuplaAutor {
         this.idAutor = idAutor;
     }
 
+    public int getIdSolicitudProyecto() {
+        return idSolicitudProyecto;
+    }
+
+    public void setIdSolicitudProyecto(int idSolicitudProyecto) {
+        this.idSolicitudProyecto = idSolicitudProyecto;
+    }
+
+    public String getNumIdentificador() {
+        return numIdentificador;
+    }
+
+    public void setNumIdentificador(String numIdentificador) {
+        this.numIdentificador = numIdentificador;
+    }
+
     @Override
     public String toString() {
-        return "TuplaAutor{" + "idTrabajoTerminal=" + idTrabajoTerminal + ", idAutor=" + idAutor + '}';
+        return "TuplaAutor{" + "idTrabajoTerminal=" + idTrabajoTerminal + ", idSolicitudProyecto=" + idSolicitudProyecto + ", numIdentificador=" + numIdentificador + ", idAutor=" + idAutor + '}';
     }
-   
-   
     
 }

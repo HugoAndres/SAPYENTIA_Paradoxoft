@@ -111,6 +111,7 @@ public class TrabajoTerminalDAO {
             
             ps = con.prepareStatement(BORRA);
             ps.setString(1, tt.getNumIdentificador());
+            ps.executeQuery();
             System.out.println("ERROR EN EL ALTA DE TESIS");
             return -1;
         }finally{
@@ -151,6 +152,35 @@ public class TrabajoTerminalDAO {
             ps.executeQuery();
 
         } finally{
+            if(ps != null){
+                ps.close();
+            }
+            if(this.con != null){
+                AlbercaDeConexiones.obtenInstancia().retirarConexion(this.con);
+            }
+        }
+        
+        return 1;
+    }
+    
+    public int borraTrabajoTerminal(String numIdentificador) throws SQLException{
+        conectar();
+        PreparedStatement ps = null;
+        try{
+            
+            if(numIdentificador == null){
+                System.out.println("EL IDENTIFICADOR ES NULO");
+                return -3;
+            }
+            
+            ps = con.prepareStatement(BORRA);
+            ps.setString(1, numIdentificador);
+            ps.executeQuery();
+            
+        } catch(SQLException ex){
+            Logger.getLogger(TrabajoTerminalDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return -1;
+        }finally{
             if(ps != null){
                 ps.close();
             }
@@ -987,7 +1017,7 @@ public class TrabajoTerminalDAO {
         }
         */
         
-        
+        /*
         TrabajoTerminalDAO dao = new TrabajoTerminalDAO();
         try {
             List<TrabajoTerminalDTO> lista = dao.buscaTrabajoTerminalPorTitulo("slas y sens");
@@ -995,7 +1025,7 @@ public class TrabajoTerminalDAO {
         } catch (SQLException ex) {
             Logger.getLogger(AcademiaDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+        */
         
         /*
         TrabajoTerminalDAO dao = new TrabajoTerminalDAO();
