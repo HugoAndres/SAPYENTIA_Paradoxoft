@@ -12,15 +12,19 @@ package com.paradoxoft.mx.modelo;
 public class TuplaDirector {
     
     private String idTrabajoTerminal;
+    private int idSolicitudProyecto;
+    private String numIdentificador;
     private String idDirector;
     private boolean director;
 
     public TuplaDirector(){
         
     }
-    
-    public TuplaDirector(String idTrabajoTerminal, String idDirector, boolean director) {
+
+    public TuplaDirector(String idTrabajoTerminal, int idSolicitudProyecto, String numIdentificador, String idDirector, boolean director) {
         this.idTrabajoTerminal = idTrabajoTerminal;
+        this.idSolicitudProyecto = idSolicitudProyecto;
+        this.numIdentificador = numIdentificador;
         this.idDirector = idDirector;
         this.director = director;
     }
@@ -49,11 +53,25 @@ public class TuplaDirector {
         this.director = director;
     }
 
+    public int getIdSolicitudProyecto() {
+        return idSolicitudProyecto;
+    }
+
+    public void setIdSolicitudProyecto(int idSolicitudProyecto) {
+        this.idSolicitudProyecto = idSolicitudProyecto;
+    }
+
+    public String getNumIdentificador() {
+        return numIdentificador;
+    }
+
+    public void setNumIdentificador(String numIdentificador) {
+        this.numIdentificador = numIdentificador;
+    }
+
     @Override
     public String toString() {
-        return "TuplaDirector{" + "idTrabajoTerminal=" + idTrabajoTerminal + ", idDirector=" + idDirector + ", director=" + director + '}';
+        return "TuplaDirector{" + "idTrabajoTerminal=" + idTrabajoTerminal + ", idSolicitudProyecto=" + idSolicitudProyecto + ", numIdentificador=" + numIdentificador + ", idDirector=" + idDirector + ", director=" + director + '}';
     }
-    
-    
-    
+
 }
