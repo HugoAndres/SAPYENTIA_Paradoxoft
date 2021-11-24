@@ -3,11 +3,26 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>SAPYENTIA</title>
+        <title>SAPYENTIA | Inicia sesión o regístrate</title>
         <link rel="shortcut icon" href="recursos/ico/monogramaSAPYENTIA.ico" type="image/x-icon" />
         <link rel="stylesheet" href="recursos/css/estilosPaginaPrincipal.css" />
+        <script src="recursos/js/usuarios/scriptDivOcultoLogin.js"></script>
+        <script src="recursos/js/usuarios/scriptPaginaPrincipal.js"></script>
     </head>
     <body>
+        <div id="divOculto">
+            <div>
+                <p class="tituloForma">Inicia sesión en SAPYENTIA</p>
+                <p class="descForma">Usa los datos que proporcionaste para registrarte.</p>
+                <form action="indefinido.html" method="post" target="_self">
+                    <label for="campoLoginEmail">Correo electrónico:</label>
+                    <input type="text" name="titulo" id="campoLoginEmail" required="required" />
+                    <label for="campoLoginContrasenia">Contraseña:</label>
+                    <input type="text" name="titulo" id="campoLoginContrasenia" required="required" />
+                    <input type="submit" value="Iniciar sesión" />
+                </form>
+            </div>
+        </div>
         <header>
             <nav>
                 <a href="index.html"><img src="recursos/svg/logoSAPYENTIA.svg" alt="Ir a página de inicio" title="Ir a página de inicio" id="logoSAPYENTIA" /></a>

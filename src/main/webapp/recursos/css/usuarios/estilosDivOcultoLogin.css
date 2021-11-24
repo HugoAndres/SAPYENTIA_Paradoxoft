@@ -1,0 +1,129 @@
+@charset "utf-8";
+
+:root{
+    --color-fondo-transparente: rgba(0,0,0,0.50);
+}
+
+#divOculto{
+    /*Display*/
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    /*Caja*/
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    /*Colores*/
+    background-color: var(--color-fondo-transparente);
+}
+
+#divOculto > div{
+    /*Caja*/
+    max-width: 50%;
+    /*Colores*/
+    background-color: white;
+    padding: 20px;
+    /*Texto*/
+    font-family: var(--fuente-primaria), var(--fuente-primaria-alt1), var(--fuente-primaria-alt2);
+    font-size: 0.9rem;
+}
+
+#divOculto .descForma{
+    /*Caja*/
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+#divOculto .tituloForma{
+    /*Caja*/
+    margin: 0px;
+    padding: 10px;
+    /*Colores*/
+    color: white;
+    background-color: var(--color-secundario);
+    /*Texto*/
+    font-weight: 700;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+#divOculto form{
+    /*Display*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+    /*Caja*/
+    margin-top: 10px;
+}
+
+#divOculto form label, #divOculto form input{
+    /*Display*/
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: auto;
+    /*Caja*/
+    width: 50%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 700px){
+    #divOculto form label, #divOculto form input{
+        width: 100%;
+    }
+}
+
+#divOculto form label{
+    /*Text*/
+    text-align: end;
+    /*Caja*/
+    padding-right: 10px;
+}
+
+@media (max-width: 700px){
+    #divOculto form label{
+        text-align: start;
+    }
+}
+
+#divOculto form input{
+    /*Caja*/
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    /*Texto*/
+    font-family: var(--fuente-primaria), var(--fuente-primaria-alt1), var(--fuente-primaria-alt2);
+    font-weight: normal;
+    font-size: 0.9rem;
+}
+
+#divOculto form input:focus{
+    outline-color: var(--color-primario);
+    outline-offset: -2px;
+    outline-style: dashed;
+    outline-width: 1px;
+}
+
+#divOculto form input[type="submit"]{
+    /*Caja*/
+    padding: 8px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    /*Texto*/
+    font-family: var(--fuente-primaria), var(--fuente-primaria-alt1), var(--fuente-primaria-alt2);
+}
+
+#divOculto form input[type="submit"]:hover{
+    /*Display*/
+    cursor: pointer;
+    /*Colores*/
+    color: white;
+    background-color: var(--color-secundario);
+}

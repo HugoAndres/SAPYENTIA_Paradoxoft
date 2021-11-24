@@ -9,6 +9,7 @@
     --color-primario: #333399;/*Morado del nav*/
     --color-secundario: #505080; /*Morado del footer*/
     --color-terciario: #0099cc;/*Azul claro del hover del nav*/
+    --color-cuaternario: greenyellow;/*Verde pasto de acentos*/
     /*Fuentes primarias*/
     --fuente-primaria: 'Raleway';
     --fuente-primaria-alt1: Verdana;
@@ -57,9 +58,43 @@ header nav{
     padding-left: 10px;
 }
 
-nav a:hover, nav button:hover{
-    /*Colores*/
-    background-color: var(--color-terciario);
+@keyframes colorearLogo{
+    from{}
+    to{
+        /*Colores*/
+        filter: drop-shadow( 2px 2px 5px white);
+    }
+}
+
+#logoSAPYENTIA:hover{
+    /*Animacion*/
+    animation-name: colorearLogo;
+    animation-duration: 0.1s;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes colorearOpcion{
+    from{}
+    to{
+        /*Colores*/
+        background-color: var(--color-terciario);
+    }
+}
+
+
+nav .vinculoSinImagen:hover, nav button:hover{
+    /*Animacion*/
+    animation-name: colorearOpcion;
+    animation-duration: 0.1s;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
 }
 
 nav button:hover{
@@ -73,7 +108,7 @@ nav button:hover{
     /*Texto*/
     text-decoration: none;
     font-family: var(--fuente-primaria), var(--fuente-primaria-alt1), var(--fuente-primaria-alt2);
-    font-weight: 400;
+    font-weight: 500;
     /*Colores*/
     color: white;
 }

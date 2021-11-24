@@ -161,14 +161,31 @@ form > div{
 
 #botonSubmit{
     /*Caja*/
+    border-style: solid;
+    border-width: 0px;
     width: 100%;
+}
+
+@keyframes colorearBoton{
+    from{}
+    to{
+        /*Colores*/
+        color: white;
+        background-color: var(--color-terciario);
+    }
 }
 
 form button:hover, #botonSubmit:hover{
     /*Display*/
     cursor: pointer;
-    /*Colores*/
-    background-color: var(--color-terciario);
+    /*Animacion*/
+    animation-name: colorearBoton;
+    animation-duration: 0.1s;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
 }
 
 main > div > img{
@@ -184,6 +201,6 @@ main > div > img{
 @media (max-width: 700px){
     main > div > img{
         /*Caja*/
-        min-width: 0;
+        min-width: 0px;
     }
 }

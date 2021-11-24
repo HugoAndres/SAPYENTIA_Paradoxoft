@@ -1,10 +1,11 @@
 @charset "utf-8";
 
 @import url("estilosPrincipales.css");
+@import url("usuarios/estilosDivOcultoLogin.css");
 
 #cuerpo{
     /*Display*/
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     /*Fondo*/
     background-image: url("../img/Estantes_biblioteca.jpg");
@@ -34,11 +35,9 @@ main p{
     /*Display*/
     align-self: flex-start;
     /*Caja*/
-    border-width: 1px;
     border-left-style: solid;
     border-left-width: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px;
     margin-top: 5px;
     margin-bottom: 5px;
     box-sizing: border-box;
@@ -48,16 +47,16 @@ main p{
     color: white;
     /*Colores*/
     background-color: rgba(83, 72, 188, 0.7);
-    border-color: greenyellow;
+    border-color: var(--color-cuaternario);
 }
 
-form{
+main form{
     /*Display*/
     width: 70%;
     display: flex;
 }
 
-form button{
+main form button{
     /*Display*/
     flex-grow: 1;
     flex-shrink: 1;
@@ -72,7 +71,7 @@ form button{
     background-color: var(--color-secundario);
 }
 
-form input{
+main form input{
     /*Display*/
     flex-grow: 19;
     flex-shrink: 19;
@@ -86,14 +85,21 @@ form input{
     font-family: var(--fuente-primaria), var(--fuente-primaria-alt1), var(--fuente-primaria-alt2);
 }
 
-form input:focus{
+main form input:focus{
     outline-color: var(--color-primario);
     outline-offset: -2px;
     outline-style: dashed;
     outline-width: 1px;
 }
 
-form button img{
+main form button:hover{
+    /*Display*/
+    cursor: pointer;
+    /*Colores*/
+    background-color: var(--color-terciario);
+}
+
+main form button img{
     /*Display*/
     display: block;
 }
