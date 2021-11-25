@@ -466,7 +466,7 @@ public class SolicitudProyectoDAO {
         }
     }
     
-    public List<SolicitudProyecto> buscaSolicitudProyecto(int idSolicitudProyecto) throws SQLException{
+    public SolicitudProyecto buscaSolicitudProyecto(int idSolicitudProyecto) throws SQLException{
         conectar();
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -490,7 +490,7 @@ public class SolicitudProyectoDAO {
                 resultados.add(sol);
             }
             if(resultados.size() > 0){
-                return resultados;
+                return resultados.get(0);
             }else{
                 return null;
             }

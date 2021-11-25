@@ -9,7 +9,7 @@ package com.paradoxoft.mx.modelo;
  *
  * @author user
  */
-public class PersonalBibliotecario {
+public class PersonalBibliotecario extends Usuario{
     
     public PersonalBibliotecario(){
         

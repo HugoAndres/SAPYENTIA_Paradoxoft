@@ -441,7 +441,7 @@ public class ProyectoDAO {
         }
     }
     
-    public List<Proyecto> buscaProyecto(String numIdentificador) throws SQLException{
+    public Proyecto buscaProyecto(String numIdentificador) throws SQLException{
         conectar();
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -472,7 +472,7 @@ public class ProyectoDAO {
                 resultados.add(proy);
             }
             if(resultados.size() > 0){
-                return resultados;
+                return resultados.get(0);
             }else{
                 return null;
             }
