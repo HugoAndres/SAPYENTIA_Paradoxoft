@@ -1,0 +1,103 @@
+@charset "utf-8";
+
+@import url("estilosPrincipales.css");
+
+header{
+    /*Display*/
+    z-index: 100;
+}
+
+#cuerpo{
+    /*Display*/
+    column-gap: 10px;
+}
+
+aside{
+    /*Display*/
+    flex-grow: 3;
+    flex-shrink: 3;
+    flex-basis: 0;
+    /*Caja*/
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /*Colores*/
+    background-color: white;
+}
+
+aside h1{
+    /*Caja*/
+    margin-left: 10px;
+    margin-right: 10px;
+    min-width: 296px;
+}
+
+div{
+    /*Caja*/
+    margin-top: 10px;
+    margin-bottom: 0px;
+    padding-left: 0px;
+    /*Texto*/
+    list-style-type:  circle;
+    /*Colores*/
+    background-color: var(--color-primario);
+}
+
+ div form{
+    /*Display*/
+    display: flow;
+    justify-content: center;
+    /*Caja*/
+    padding: 10px;
+    /*Colores*/
+    background-color: white;
+}
+
+ div form input[type=submit]{
+    /*Colores*/
+    background-color: var(--color-fondo);
+}
+
+ div form input[type=submit]:hover{
+    /*Display*/
+    cursor: pointer;
+    /*Colores*/
+    background-color: var(--color-secundario);
+    color: white;
+}
+
+ div form input{
+    /*Caja*/
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    border-radius: 0px;
+    border-style: solid;
+    border-width: 1px;
+    /*Texto*/
+    font-family: var(--fuente-primaria), var(--fuente-primaria-alt1), var(--fuente-primaria-alt2);
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+ div form input:focus{
+    outline-color: var(--color-primario);
+    outline-offset: -2px;
+    outline-style: dashed;
+    outline-width: 1px;
+}
+
+
+main{
+    /*Display*/
+    flex-grow: 10;
+    flex-shrink: 10;
+    flex-basis: 0;
+    background-color: white;
+    /*Caja*/
+    padding: 40px;
+}
+.fil{
+    font-size: 30px;
+     justify-content: center;
+}  
