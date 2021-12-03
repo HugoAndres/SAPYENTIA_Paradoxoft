@@ -42,6 +42,10 @@
                          <h3><input type="radio" id="html" name="ord-tit" value="fecasc"><label for="fecasc">Ascendente</label></h3> 
                          <h3><input type="radio" id="html" name="ord-tit" value="fecdsc"><label for="fecdsc">Descendente</label></h3> 
                                  <br><br><br>
+                         <h1>Ordenar por rol</h1>
+                         <h3><input type="radio" id="html" name="ord-tit" value="rolsin"><label for="rolsin">Sinodal</label></h3> 
+                         <h3><input type="radio" id="html" name="ord-tit" value="roldir"><label for="roldir">Director</label></h3> 
+                                 <br><br><br>
                                 <center>
                                <input value="Aplicar" type="submit" id="btn-bmm-ap">
                                </center>
@@ -141,6 +145,40 @@
                                     out.println("<h2> <a href='https://archivo.ucr.ac.cr/docum/tesis2.pdf' target='_blank'>Documento Completo</a></h2><br>");
                                     out.println("<h2>Abstract</h2><br>");
                                     out.println("" + res.get(i).getAbst().toString() + "<br>");
+                                    out.println("'</td></tr>");
+                                }
+                            }
+                         }else if(opc.equalsIgnoreCase("roldir")){
+                             
+                             if (ttd == null || ttd.isEmpty()) {
+                                out.println("<tr><td>No hay ningun elemento que coincida con la busqueda</td></tr>");
+
+                            } else {
+                                for (int i = 0; i < ttd.size(); i++) {
+                                    out.println("<tr><td><h1>Titulo: " + ttd.get(i).getTitulo().toString() + "</h1>");
+                                    out.println("<br><h2>Autor(es):  " + ttd.get(i).getNombresAutores().toString() + "  <br> Sinodales: " + ttd.get(i).getNombresSinodales().toString() + "   <br>  Director(es): " + ttd.get(i).getNombresDirectores().toString() + "</h2><br>");
+                                    out.println("<h2>Unidades Académicas: " + ttd.get(i).getInstitucion().toString() + "     Fecha de realización: " + ttd.get(i).getFechaRealizacion().toString() + "       </h2> <br>");
+                                    //out.println("<h2> <a href='"+ttd.get(i).getRutaTrabajoTerminal().toString()+"' target='_blank'>Documento Completo</a></h2><br>");
+                                    out.println("<h2> <a href='https://archivo.ucr.ac.cr/docum/tesis2.pdf' target='_blank'>Documento Completo</a></h2><br>");
+                                    out.println("<h2>Abstract</h2><br>");
+                                    out.println("" + ttd.get(i).getAbst().toString() + "<br>");
+                                    out.println("'</td></tr>");
+                                }
+                            }             
+                         }else if(opc.equalsIgnoreCase("rolsin")){
+                             
+                            if (ds == null || ds.isEmpty()) {
+                                out.println("<tr><td>No hay ningun elemento que coincida con la busqueda</td></tr>");
+
+                            } else {
+                                for (int i = 0; i < ds.size(); i++) {
+                                    out.println("<tr><td><h1>Titulo: " + ds.get(i).getTitulo().toString() + "</h1>");
+                                    out.println("<br><h2>Autor(es):  " + ds.get(i).getNombresAutores().toString() + "  <br> Sinodales: " + ds.get(i).getNombresSinodales().toString() + "   <br>  Director(es): " + ds.get(i).getNombresDirectores().toString() + "</h2><br>");
+                                    out.println("<h2>Unidades Académicas: " + ds.get(i).getInstitucion().toString() + "     Fecha de realización: " + ds.get(i).getFechaRealizacion().toString() + "       </h2> <br>");
+                                    //out.println("<h2> <a href='"+ttd.get(i).getRutaTrabajoTerminal().toString()+"' target='_blank'>Documento Completo</a></h2><br>");
+                                    out.println("<h2> <a href='https://archivo.ucr.ac.cr/docum/tesis2.pdf' target='_blank'>Documento Completo</a></h2><br>");
+                                    out.println("<h2>Abstract</h2><br>");
+                                    out.println("" + ds.get(i).getAbst().toString() + "<br>");
                                     out.println("'</td></tr>");
                                 }
                             }
