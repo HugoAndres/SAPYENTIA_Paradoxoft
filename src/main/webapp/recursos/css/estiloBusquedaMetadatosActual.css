@@ -64,6 +64,25 @@ ul div form input[type=submit]:hover{
     background-color: var(--color-secundario);
     color: white;
 }
+.sub{
+    /*Colores*/
+    background-color: var(--color-fondo);
+}
+.sub:hover{
+    /*Display*/
+    cursor: pointer;
+    /*Colores*/
+    background-color: var(--color-secundario);
+    color: white;
+}
+
+ul div form input[type=submit]:hover{
+    /*Display*/
+    cursor: pointer;
+    /*Colores*/
+    background-color: var(--color-secundario);
+    color: white;
+}
 
 ul div form input{
     /*Caja*/

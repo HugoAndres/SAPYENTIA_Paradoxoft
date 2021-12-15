@@ -132,12 +132,15 @@
 
                             } else {
                                 for (int i = 0; i < ttd.size(); i++) {
+                                    String cad= ttd.get(i).getNombresAutores().toString()+" \" "+ttd.get(i).getTitulo().toString()+"\""+" M.S. thesis, "+ttd.get(i).getInstitucion().toString()+" Ciudad de México, "+ ttd.get(i).getFechaRealizacion().toString();
                                     out.println("<tr><td><h1>Titulo: " + ttd.get(i).getTitulo().toString() + "</h1>");
-                                    out.println("<br><h2>Autor(es):  " + ttd.get(i).getNombresAutores().toString() + "  <br> Sinodales: " + ttd.get(i).getNombresSinodales().toString() + "   <br>  Director(es): " + ttd.get(i).getNombresDirectores().toString() + "</h2><br>");
-                                    out.println("<h2>Unidades Académicas: " + ttd.get(i).getInstitucion().toString() + "     Fecha de realización: " + ttd.get(i).getFechaRealizacion().toString() + "       </h2> <br>");
+                                    out.println("<br><h2>Autor(es):  " + ttd.get(i).getNombresAutores().toString() + "  <br> Sinodales: " + ttd.get(i).getNombresSinodales().toString() + "   <br>  Director(es): " + ttd.get(i).getNombresDirectores().toString() + "</h2>");
+                                    out.println("<h2>Unidades Académicas: " + ttd.get(i).getInstitucion().toString() + "     Fecha de realización: " + ttd.get(i).getFechaRealizacion().toString() + "       </h2>");
                                     //out.println("<h2> <a href='"+ttd.get(i).getRutaTrabajoTerminal().toString()+"' target='_blank'>Documento Completo</a></h2><br>");
-                                    out.println("<h2> <a href='https://archivo.ucr.ac.cr/docum/tesis2.pdf' target='_blank'>Documento Completo</a></h2><br>");
-                                    out.println("<h2>Abstract</h2><br>");
+                                    out.println("<form method='post' action='../../alumnos/consultaDeTesisJSP.jsp'><input type='hidden' value='"+ttd.get(i).getNumIdentificador()+"' id='numI' name='numI'>");
+                                    out.println("<h2> <input type='submit' class='sub' value='Ver'></form>");
+                                    //out.println("<h2><p id='p1' >"+cad+"</p> <button onclick='copiarAlPortapapeles(p1)'>Citar</button>");
+                                    out.println("<h2>Abstract:</h2>");
                                     out.println("" + ttd.get(i).getAbst().toString() + "<br>");
                                     out.println("'</td></tr>");
                                 }
@@ -152,11 +155,12 @@
                             } else {
                                 for (int i = 0; i < ttd.size(); i++) {
                                     out.println("<tr><td><h1>Titulo: " + ttd.get(i).getTitulo().toString() + "</h1>");
-                                    out.println("<br><h2>Autor(es):  " + ttd.get(i).getNombresAutores().toString() + "  <br> Sinodales: " + ttd.get(i).getNombresSinodales().toString() + "   <br>  Director(es): " + ttd.get(i).getNombresDirectores().toString() + "</h2><br>");
-                                    out.println("<h2>Unidades Académicas: " + ttd.get(i).getInstitucion().toString() + "     Fecha de realización: " + ttd.get(i).getFechaRealizacion().toString() + "       </h2> <br>");
+                                    out.println("<br><h2>Autor(es):  " + ttd.get(i).getNombresAutores().toString() + "  <br> Sinodales: " + ttd.get(i).getNombresSinodales().toString() + "   <br>  Director(es): " + ttd.get(i).getNombresDirectores().toString() + "</h2>");
+                                    out.println("<h2>Unidades Académicas: " + ttd.get(i).getInstitucion().toString() + "     Fecha de realización: " + ttd.get(i).getFechaRealizacion().toString() + "       </h2> ");
                                     //out.println("<h2> <a href='"+ttd.get(i).getRutaTrabajoTerminal().toString()+"' target='_blank'>Documento Completo</a></h2><br>");
-                                    out.println("<h2> <a href='https://archivo.ucr.ac.cr/docum/tesis2.pdf' target='_blank'>Documento Completo</a></h2><br>");
-                                    out.println("<h2>Abstract</h2><br>");
+                                    out.println("<form method='post' action='../../alumnos/consultaDeTesisJSP.jsp'><input type='hidden' value='"+ttd.get(i).getNumIdentificador()+"' id='numI' name='numI'>");
+                                    out.println("<h2> <input type='submit' class='sub' value='Ver'></form><br>");
+                                    out.println("<h2>Abstract:</h2>");
                                     out.println("" + ttd.get(i).getAbst().toString() + "<br>");
                                     out.println("'</td></tr>");
                                 }
@@ -172,11 +176,12 @@
                             } else {
                                 for (int i = 0; i < ttd.size(); i++) {
                                     out.println("<tr><td><h1>Titulo: " + ttd.get(i).getTitulo().toString() + "</h1>");
-                                    out.println("<br><h2>Autor(es):  " + ttd.get(i).getNombresAutores().toString() + " <br>  Sinodales: " + ttd.get(i).getNombresSinodales().toString() + "   <br>  Director(es): " + ttd.get(i).getNombresDirectores().toString() + "</h2><br>");
-                                    out.println("<h2>Unidades Académicas: " + ttd.get(i).getInstitucion().toString() + "     Fecha de realización: " + ttd.get(i).getFechaRealizacion().toString() + "       </h2> <br>");
+                                    out.println("<br><h2>Autor(es):  " + ttd.get(i).getNombresAutores().toString() + " <br>  Sinodales: " + ttd.get(i).getNombresSinodales().toString() + "   <br>  Director(es): " + ttd.get(i).getNombresDirectores().toString() + "</h2>");
+                                    out.println("<h2>Unidades Académicas: " + ttd.get(i).getInstitucion().toString() + "     Fecha de realización: " + ttd.get(i).getFechaRealizacion().toString() + "       </h2> ");
                                     //out.println("<h2> <a href='"+ttd.get(i).getRutaTrabajoTerminal().toString()+"' target='_blank'>Documento Completo</a></h2><br>");
-                                    out.println("<h2> <a href='https://archivo.ucr.ac.cr/docum/tesis2.pdf' target='_blank'>Documento Completo</a></h2><br>");
-                                    out.println("<h2>Abstract</h2><br>");
+                                    out.println("<form method='post' action='../../alumnos/consultaDeTesisJSP.jsp'><input type='hidden' value='"+ttd.get(i).getNumIdentificador()+"' id='numI' name='numI'>");
+                                    out.println("<h2> <input type='submit' class='sub' value='Ver'></form><br>");
+                                    out.println("<h2>Abstract:</h2>");
                                     out.println("" + ttd.get(i).getAbst().toString() + "<br>");
                                     out.println("'</td></tr>");
                                 }
@@ -192,11 +197,12 @@
                             } else {
                                 for (int i = 0; i < ttd.size(); i++) {
                                     out.println("<tr><td><h1>Titulo: " + ttd.get(i).getTitulo().toString() + "</h1>");
-                                    out.println("<br><h2>Autor(es):  " + ttd.get(i).getNombresAutores().toString() + " <br>  Sinodales: " + ttd.get(i).getNombresSinodales().toString() + "   <br>  Director(es): " + ttd.get(i).getNombresDirectores().toString() + "</h2><br>");
-                                    out.println("<h2>Unidades Académicas: " + ttd.get(i).getInstitucion().toString() + "     Fecha de realización: " + ttd.get(i).getFechaRealizacion().toString() + "       </h2> <br>");
+                                    out.println("<br><h2>Autor(es):  " + ttd.get(i).getNombresAutores().toString() + " <br>  Sinodales: " + ttd.get(i).getNombresSinodales().toString() + "   <br>  Director(es): " + ttd.get(i).getNombresDirectores().toString() + "</h2>");
+                                    out.println("<h2>Unidades Académicas: " + ttd.get(i).getInstitucion().toString() + "     Fecha de realización: " + ttd.get(i).getFechaRealizacion().toString() + "       </h2> ");
                                     //out.println("<h2> <a href='"+ttd.get(i).getRutaTrabajoTerminal().toString()+"' target='_blank'>Documento Completo</a></h2><br>");
-                                    out.println("<h2> <a href='https://archivo.ucr.ac.cr/docum/tesis2.pdf' target='_blank'>Documento Completo</a></h2><br>");
-                                    out.println("<h2>Abstract</h2><br>");
+                                    out.println("<form method='post' action='../../alumnos/consultaDeTesisJSP.jsp'><input type='hidden' value='"+ttd.get(i).getNumIdentificador()+"' id='numI' name='numI'>");
+                                    out.println("<h2> <input type='submit' class='sub' value='Ver'></form><br>");
+                                    out.println("<h2>Abstract:</h2>");
                                     out.println("" + ttd.get(i).getAbst().toString() + "<br>");
                                     out.println("'</td></tr>");
                                 }
@@ -212,11 +218,12 @@
                             } else {
                                 for (int i = 0; i < ttd.size(); i++) {
                                     out.println("<tr><td><h1>Titulo: " + ttd.get(i).getTitulo().toString() + "</h1>");
-                                    out.println("<br><h2>Autor(es):  " + ttd.get(i).getNombresAutores().toString() + " <br>  Sinodales: " + ttd.get(i).getNombresSinodales().toString() + "   <br>  Director(es): " + ttd.get(i).getNombresDirectores().toString() + "</h2><br>");
-                                    out.println("<h2>Unidades Académicas: " + ttd.get(i).getInstitucion().toString() + "     Fecha de realización: " + ttd.get(i).getFechaRealizacion().toString() + "       </h2> <br>");
+                                    out.println("<br><h2>Autor(es):  " + ttd.get(i).getNombresAutores().toString() + " <br>  Sinodales: " + ttd.get(i).getNombresSinodales().toString() + "   <br>  Director(es): " + ttd.get(i).getNombresDirectores().toString() + "</h2>");
+                                    out.println("<h2>Unidades Académicas: " + ttd.get(i).getInstitucion().toString() + "     Fecha de realización: " + ttd.get(i).getFechaRealizacion().toString() + "       </h2>");
                                     //out.println("<h2> <a href='"+ttd.get(i).getRutaTrabajoTerminal().toString()+"' target='_blank'>Documento Completo</a></h2><br>");
-                                    out.println("<h2> <a href='https://archivo.ucr.ac.cr/docum/tesis2.pdf' target='_blank'>Documento Completo</a></h2><br>");
-                                    out.println("<h2>Abstract</h2><br>");
+                                    out.println("<form method='post' action='../../alumnos/consultaDeTesisJSP.jsp'><input type='hidden' value='"+ttd.get(i).getNumIdentificador()+"' id='numI' name='numI'>");
+                                    out.println("<h2> <input type='submit' class='sub' value='Ver'></form><br>");
+                                    out.println("<h2>Abstract:</h2>");
                                     out.println("" + ttd.get(i).getAbst().toString() + "<br>");
                                     out.println("'</td></tr>");
                                 }
@@ -232,11 +239,12 @@
                             } else {
                                 for (int i = 0; i < ttd.size(); i++) {
                                     out.println("<tr><td><h1>Titulo: " + ttd.get(i).getTitulo().toString() + "</h1>");
-                                    out.println("<br><h2>Autor(es):  " + ttd.get(i).getNombresAutores().toString() + " <br>  Sinodales: " + ttd.get(i).getNombresSinodales().toString() + "   <br>  Director(es): " + ttd.get(i).getNombresDirectores().toString() + "</h2><br>");
-                                    out.println("<h2>Unidades Académicas: " + ttd.get(i).getInstitucion().toString() + "     Fecha de realización: " + ttd.get(i).getFechaRealizacion().toString() + "       </h2> <br>");
+                                    out.println("<br><h2>Autor(es):  " + ttd.get(i).getNombresAutores().toString() + " <br>  Sinodales: " + ttd.get(i).getNombresSinodales().toString() + "   <br>  Director(es): " + ttd.get(i).getNombresDirectores().toString() + "</h2>");
+                                    out.println("<h2>Unidades Académicas: " + ttd.get(i).getInstitucion().toString() + "     Fecha de realización: " + ttd.get(i).getFechaRealizacion().toString() + "       </h2> ");
                                     //out.println("<h2> <a href='"+ttd.get(i).getRutaTrabajoTerminal().toString()+"' target='_blank'>Documento Completo</a></h2><br>");
-                                    out.println("<h2> <a href='https://archivo.ucr.ac.cr/docum/tesis2.pdf' target='_blank'>Documento Completo</a></h2><br>");
-                                    out.println("<h2>Abstract</h2><br>");
+                                    out.println("<form method='post' action='../../alumnos/consultaDeTesisJSP.jsp'><input type='hidden' value='"+ttd.get(i).getNumIdentificador()+"' id='numI' name='numI'>");
+                                    out.println("<h2> <input type='submit' class='sub' value='Ver'></form><br>");
+                                    out.println("<h2>Abstract:</h2>");
                                     out.println("" + ttd.get(i).getAbst().toString() + "<br>");
                                     out.println("'</td></tr>");
                                 }
@@ -252,11 +260,12 @@
                             } else {
                                 for (int i = 0; i < ttd.size(); i++) {
                                     out.println("<tr><td><h1>Titulo: " + ttd.get(i).getTitulo().toString() + "</h1>");
-                                    out.println("<br><h2>Autor(es):  " + ttd.get(i).getNombresAutores().toString() + " <br>  Sinodales: " + ttd.get(i).getNombresSinodales().toString() + "   <br>  Director(es): " + ttd.get(i).getNombresDirectores().toString() + "</h2><br>");
-                                    out.println("<h2>Unidades Académicas: " + ttd.get(i).getInstitucion().toString() + "     Fecha de realización: " + ttd.get(i).getFechaRealizacion().toString() + "       </h2> <br>");
+                                    out.println("<br><h2>Autor(es):  " + ttd.get(i).getNombresAutores().toString() + " <br>  Sinodales: " + ttd.get(i).getNombresSinodales().toString() + "   <br>  Director(es): " + ttd.get(i).getNombresDirectores().toString() + "</h2>");
+                                    out.println("<h2>Unidades Académicas: " + ttd.get(i).getInstitucion().toString() + "     Fecha de realización: " + ttd.get(i).getFechaRealizacion().toString() + "       </h2> ");
                                     //out.println("<h2> <a href='"+ttd.get(i).getRutaTrabajoTerminal().toString()+"' target='_blank'>Documento Completo</a></h2><br>");
-                                    out.println("<h2> <a href='https://archivo.ucr.ac.cr/docum/tesis2.pdf' target='_blank'>Documento Completo</a></h2><br>");
-                                    out.println("<h2>Abstract</h2><br>");
+                                    out.println("<form method='post' action='../../alumnos/consultaDeTesisJSP.jsp'><input type='hidden' value='"+ttd.get(i).getNumIdentificador()+"' id='numI' name='numI'>");
+                                    out.println("<h2> <input type='submit' class='sub' value='Ver'></form><br>");
+                                    out.println("<h2>Abstract:</h2>");
                                     out.println("" + ttd.get(i).getAbst().toString() + "<br>");
                                     out.println("'</td></tr>");
                                 }
@@ -303,6 +312,14 @@
             /*$('div ul li').click(function () {
                 $(this).addClass("active").siblings().removeClass("active");
             });*/
+        function copiarAlPortapapeles(id_elemento) {
+          var aux = document.createElement("input");
+          aux.setAttribute("value", document.getElementById(id_elemento).innerHTML);
+          document.body.appendChild(aux);
+          aux.select();
+          document.execCommand("copy");
+          document.body.removeChild(aux);
+        }
         </script>
     </body>
 </html>

@@ -1,73 +1,99 @@
-:root{
-    /*VARIABLES*/
+@import url("estilosPrincipales.css");
+
+#cuerpo{
+    /*Display*/
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+.button {
+  background-color:  var(--color-primario);
+  border: none;
+  color: white;
+  padding: 30px 80px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+table {
+  border-collapse: collapse;
+
+
+}
+th, td {
+  padding: 20px;
+  font-family: var(--fuente-primaria-alt1);
+     
+}
+main{
+    /*Caja*/
+    width: 90%;
+    padding: 30px;
+    box-sizing: border-box;
     /*Colores*/
-    --color-fondo: #9999ff;
-    --color-primario: #333399;
-    /*Fuentes primarias*/
-    --fuente-primaria: 'Raleway';
-    --fuente-primaria-alt1: Verdana;
-    --fuente-primaria-alt2: sans-serif;
-    /*Fuentes secundarias*/
-    --fuente-secundaria: 'Segoe UI';
-    --fuente-secundaria-alt1: Arial;
-    --fuente-secundaria-alt2: sans-serif;
+    background-color: white;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;   
+.der{
+    /*Display*/
+    width: 15%;
+    float: left;
+    /*Caja*/
+    margin-top: 20px;
+    margin-left: 6px;
 }
-
-nav{
-    display: flex;
-    padding: 10px;
-    background-color: var(--color-primario);
-    
-}
-
-#informacionMetadatos{
-    background-color: var(--color-fondo);
-    border-radius: 1rem;
-    padding: 1rem;
-    font-family: var(--fuente-primaria), var(--fuente-primaria-alt1), var(--fuente-primaria-alt2);
-    ;
-}
-
-.metadatos {
-    background-color: var(--color-primario);
-    padding: 1rem;
-    margin: 1rem;
+.iz{
+ /*Display*/
+    width: 80%;
+    float: left;
+    padding: 20px;
     text-align: center;
+    margin-top: 20px;
 }
 
-.contenedor{
-    display: flex;
-    margin: 1rem;
-}
 
-.descarga{
-    background-color: red;
-    align-content: center;
+.drag-area{
+  border: 2px dashed var(--color-primario);
+  height: 550px;
+  width: 900px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
-
-#visorpdf{
-    margin-left: 1rem;
-    margin-right: 1rem;
-    text-align: center;
+.drag-area.active{
+  border: 2px solid var(--color-primario);
 }
-
-#visorpdf object{
-    width: 65rem;
-    height: 35rem;
-    margin-bottom: 2rem; 
+.drag-area .icon{
+  font-size: 100px;
+  color: #fff;
 }
+.drag-area button{
+  padding: 10px 25px;
+  font-size: 20px;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  background: #fff;
+  color: #5256ad;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.drag-area img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.drag-area span{
+  font-size: 25px;
+  font-weight: 500;
+  color: black;
 
-#visorpdf button{
-    padding: 0.5rem;
-    justify-content: center;
-    background-color: green;
-    font-size: 1rem;
-    font-family: var(--fuente-primaria), var(--fuente-primaria-alt1), var(--fuente-primaria-alt2);
-    border-radius: 1rem;
+}
+.drag-area header{
+  font-size: 30px;
+  font-weight: 500;
+  color: black;
 }

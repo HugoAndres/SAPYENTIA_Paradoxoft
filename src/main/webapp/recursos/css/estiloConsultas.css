@@ -1,0 +1,74 @@
+@import url("estilosPrincipales.css");
+
+#cuerpo{
+    /*Display*/
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+.button {
+  background-color:  var(--color-primario);
+  border: none;
+  color: white;
+  padding: 30px 80px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+main{
+    /*Caja*/
+    width: 95%;
+    padding: 30px;
+    box-sizing: border-box;
+    /*Colores*/
+    background-color: white;
+}
+
+#informacionMetadatos{
+    background-color: var(--color-fondo);
+    border-radius: 1rem;
+    padding: 1rem;
+    font-family: var(--fuente-primaria), var(--fuente-primaria-alt1), var(--fuente-primaria-alt2);
+    width: 25%;
+}
+
+.metadatos {
+    background-color: var(--color-primario);
+    padding: 1rem;
+    margin: 1rem;
+    text-align: center;
+    color: white;
+}
+
+.contenedor{
+    display: flex;
+    margin: 1rem;
+    text-align: center;
+}
+
+.descarga{
+    background-color: red;
+    align-content: center;
+}
+
+#visorpdf{
+             width: 75%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    text-align: center;
+}
+
+#visorpdf object{
+    width: 100%;
+    height: 95%;
+    margin-bottom: 1rem; 
+}
+
+#visorpdf button{
+    padding: 0.5rem;
+    justify-content: center;
+    background-color: green;
+    font-size: 1rem;
+    font-family: var(--fuente-primaria), var(--fuente-primaria-alt1), var(--fuente-primaria-alt2);
+    border-radius: 1rem;
+}

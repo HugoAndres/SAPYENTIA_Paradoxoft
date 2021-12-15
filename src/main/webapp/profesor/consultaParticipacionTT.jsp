@@ -88,11 +88,12 @@
                                 comp.ordenaPorTituloAscendente(res);
                                 for (int i = 0; i < res.size(); i++) {
                                     out.println("<tr><td><h1>Titulo: " + res.get(i).getTitulo().toString() + "</h1>");
-                                    out.println("<br><h2>Autor(es):  " + res.get(i).getNombresAutores().toString() + "  <br> Sinodales: " + res.get(i).getNombresSinodales().toString() + "   <br>  Director(es): " + res.get(i).getNombresDirectores().toString() + "</h2><br>");
-                                    out.println("<h2>Unidades Académicas: " + res.get(i).getInstitucion().toString() + "     Fecha de realización: " + res.get(i).getFechaRealizacion().toString() + "       </h2> <br>");
+                                    out.println("<br><h2>Autor(es):  " + res.get(i).getNombresAutores().toString() + "  <br> Sinodales: " + res.get(i).getNombresSinodales().toString() + "   <br>  Director(es): " + res.get(i).getNombresDirectores().toString() + "</h2>");
+                                    out.println("<h2>Unidades Académicas: " + res.get(i).getInstitucion().toString() + "   |  Fecha de realización: " + res.get(i).getFechaRealizacion().toString() + "       </h2>");
                                     //out.println("<h2> <a href='"+ttd.get(i).getRutaTrabajoTerminal().toString()+"' target='_blank'>Documento Completo</a></h2><br>");
-                                    out.println("<h2> <a href='https://archivo.ucr.ac.cr/docum/tesis2.pdf' target='_blank'>Documento Completo</a></h2><br>");
-                                    out.println("<h2>Abstract</h2><br>");
+                                    out.println("<form method='post' action='../alumnos/consultaDeTesisJSP.jsp'><input type='hidden' value='"+res.get(i).getNumIdentificador()+"' id='numI' name='numI'>");
+                                    out.println(" <input type='submit' class='sub' value='Visualizar'></form>");
+                                     out.println("<h2>Abstract</h2>");
                                     out.println("" + res.get(i).getAbst().toString() + "<br>");
                                     out.println("'</td></tr>");
                                 }
@@ -105,11 +106,12 @@
                                 comp.ordenaPorTituloDescendente(res);
                                 for (int i = 0; i < res.size(); i++) {
                                     out.println("<tr><td><h1>Titulo: " + res.get(i).getTitulo().toString() + "</h1>");
-                                    out.println("<br><h2>Autor(es):  " + res.get(i).getNombresAutores().toString() + "  <br> Sinodales: " + res.get(i).getNombresSinodales().toString() + "   <br>  Director(es): " + res.get(i).getNombresDirectores().toString() + "</h2><br>");
-                                    out.println("<h2>Unidades Académicas: " + res.get(i).getInstitucion().toString() + "     Fecha de realización: " + res.get(i).getFechaRealizacion().toString() + "       </h2> <br>");
+                                    out.println("<br><h2>Autor(es):  " + res.get(i).getNombresAutores().toString() + "  <br> Sinodales: " + res.get(i).getNombresSinodales().toString() + "   <br>  Director(es): " + res.get(i).getNombresDirectores().toString() + "</h2>");
+                                    out.println("<h2>Unidades Académicas: " + res.get(i).getInstitucion().toString() + "   |  Fecha de realización: " + res.get(i).getFechaRealizacion().toString() + "       </h2>");
                                     //out.println("<h2> <a href='"+ttd.get(i).getRutaTrabajoTerminal().toString()+"' target='_blank'>Documento Completo</a></h2><br>");
-                                    out.println("<h2> <a href='https://archivo.ucr.ac.cr/docum/tesis2.pdf' target='_blank'>Documento Completo</a></h2><br>");
-                                    out.println("<h2>Abstract</h2><br>");
+                                    out.println("<form method='post' action='../alumnos/consultaDeTesisJSP.jsp'><input type='hidden' value='"+res.get(i).getNumIdentificador()+"' id='numI' name='numI'>");
+                                    out.println(" <input type='submit' class='sub' value='Visualizar'></form>");
+                                     out.println("<h2>Abstract</h2>");
                                     out.println("" + res.get(i).getAbst().toString() + "<br>");
                                     out.println("'</td></tr>");
                                 }
@@ -120,13 +122,14 @@
                             } else {
                              ComparadoresTrabajoTerminalDTO comp =new ComparadoresTrabajoTerminalDTO();
                              comp.ordenaPorFechaAscendente(res);
-                             for (int i = 0; i < res.size(); i++) {
+                                for (int i = 0; i < res.size(); i++) {
                                     out.println("<tr><td><h1>Titulo: " + res.get(i).getTitulo().toString() + "</h1>");
-                                    out.println("<br><h2>Autor(es):  " + res.get(i).getNombresAutores().toString() + "  <br> Sinodales: " + res.get(i).getNombresSinodales().toString() + "   <br>  Director(es): " + res.get(i).getNombresDirectores().toString() + "</h2><br>");
-                                    out.println("<h2>Unidades Académicas: " + res.get(i).getInstitucion().toString() + "     Fecha de realización: " + res.get(i).getFechaRealizacion().toString() + "       </h2> <br>");
+                                    out.println("<br><h2>Autor(es):  " + res.get(i).getNombresAutores().toString() + "  <br> Sinodales: " + res.get(i).getNombresSinodales().toString() + "   <br>  Director(es): " + res.get(i).getNombresDirectores().toString() + "</h2>");
+                                    out.println("<h2>Unidades Académicas: " + res.get(i).getInstitucion().toString() + "   |  Fecha de realización: " + res.get(i).getFechaRealizacion().toString() + "       </h2>");
                                     //out.println("<h2> <a href='"+ttd.get(i).getRutaTrabajoTerminal().toString()+"' target='_blank'>Documento Completo</a></h2><br>");
-                                    out.println("<h2> <a href='https://archivo.ucr.ac.cr/docum/tesis2.pdf' target='_blank'>Documento Completo</a></h2><br>");
-                                    out.println("<h2>Abstract</h2><br>");
+                                    out.println("<form method='post' action='../alumnos/consultaDeTesisJSP.jsp'><input type='hidden' value='"+res.get(i).getNumIdentificador()+"' id='numI' name='numI'>");
+                                    out.println(" <input type='submit' class='sub' value='Visualizar'></form>");
+                                     out.println("<h2>Abstract</h2>");
                                     out.println("" + res.get(i).getAbst().toString() + "<br>");
                                     out.println("'</td></tr>");
                                 }
@@ -137,13 +140,14 @@
                             } else {
                                 ComparadoresTrabajoTerminalDTO comp =new ComparadoresTrabajoTerminalDTO();
                                 comp.ordenaPorFechaDescendente(res);
-                                for (int i = 0; i < res.size(); i++) {
+                                 for (int i = 0; i < res.size(); i++) {
                                     out.println("<tr><td><h1>Titulo: " + res.get(i).getTitulo().toString() + "</h1>");
-                                    out.println("<br><h2>Autor(es):  " + res.get(i).getNombresAutores().toString() + "  <br> Sinodales: " + res.get(i).getNombresSinodales().toString() + "   <br>  Director(es): " + res.get(i).getNombresDirectores().toString() + "</h2><br>");
-                                    out.println("<h2>Unidades Académicas: " + res.get(i).getInstitucion().toString() + "     Fecha de realización: " + res.get(i).getFechaRealizacion().toString() + "       </h2> <br>");
+                                    out.println("<br><h2>Autor(es):  " + res.get(i).getNombresAutores().toString() + "  <br> Sinodales: " + res.get(i).getNombresSinodales().toString() + "   <br>  Director(es): " + res.get(i).getNombresDirectores().toString() + "</h2>");
+                                    out.println("<h2>Unidades Académicas: " + res.get(i).getInstitucion().toString() + "   |  Fecha de realización: " + res.get(i).getFechaRealizacion().toString() + "       </h2>");
                                     //out.println("<h2> <a href='"+ttd.get(i).getRutaTrabajoTerminal().toString()+"' target='_blank'>Documento Completo</a></h2><br>");
-                                    out.println("<h2> <a href='https://archivo.ucr.ac.cr/docum/tesis2.pdf' target='_blank'>Documento Completo</a></h2><br>");
-                                    out.println("<h2>Abstract</h2><br>");
+                                    out.println("<form method='post' action='../alumnos/consultaDeTesisJSP.jsp'><input type='hidden' value='"+res.get(i).getNumIdentificador()+"' id='numI' name='numI'>");
+                                    out.println(" <input type='submit' class='sub' value='Visualizar'></form>");
+                                     out.println("<h2>Abstract</h2>");
                                     out.println("" + res.get(i).getAbst().toString() + "<br>");
                                     out.println("'</td></tr>");
                                 }
@@ -156,11 +160,12 @@
                             } else {
                                 for (int i = 0; i < ttd.size(); i++) {
                                     out.println("<tr><td><h1>Titulo: " + ttd.get(i).getTitulo().toString() + "</h1>");
-                                    out.println("<br><h2>Autor(es):  " + ttd.get(i).getNombresAutores().toString() + "  <br> Sinodales: " + ttd.get(i).getNombresSinodales().toString() + "   <br>  Director(es): " + ttd.get(i).getNombresDirectores().toString() + "</h2><br>");
-                                    out.println("<h2>Unidades Académicas: " + ttd.get(i).getInstitucion().toString() + "     Fecha de realización: " + ttd.get(i).getFechaRealizacion().toString() + "       </h2> <br>");
+                                    out.println("<br><h2>Autor(es):  " + ttd.get(i).getNombresAutores().toString() + "  <br> Sinodales: " + ttd.get(i).getNombresSinodales().toString() + "   <br>  Director(es): " + ttd.get(i).getNombresDirectores().toString() + "</h2>");
+                                    out.println("<h2>Unidades Académicas: " + ttd.get(i).getInstitucion().toString() + "     Fecha de realización: " + ttd.get(i).getFechaRealizacion().toString() + "       </h2> ");
                                     //out.println("<h2> <a href='"+ttd.get(i).getRutaTrabajoTerminal().toString()+"' target='_blank'>Documento Completo</a></h2><br>");
-                                    out.println("<h2> <a href='https://archivo.ucr.ac.cr/docum/tesis2.pdf' target='_blank'>Documento Completo</a></h2><br>");
-                                    out.println("<h2>Abstract</h2><br>");
+                                     out.println("<form method='post' action='../alumnos/consultaDeTesisJSP.jsp'><input type='hidden' value='"+ttd.get(i).getNumIdentificador()+"' id='numI' name='numI'>");
+                                    out.println(" <input type='submit' class='sub' value='Visualizar'></form>");
+                                    out.println("<h2>Abstract</h2>");
                                     out.println("" + ttd.get(i).getAbst().toString() + "<br>");
                                     out.println("'</td></tr>");
                                 }
@@ -173,11 +178,12 @@
                             } else {
                                 for (int i = 0; i < ds.size(); i++) {
                                     out.println("<tr><td><h1>Titulo: " + ds.get(i).getTitulo().toString() + "</h1>");
-                                    out.println("<br><h2>Autor(es):  " + ds.get(i).getNombresAutores().toString() + "  <br> Sinodales: " + ds.get(i).getNombresSinodales().toString() + "   <br>  Director(es): " + ds.get(i).getNombresDirectores().toString() + "</h2><br>");
-                                    out.println("<h2>Unidades Académicas: " + ds.get(i).getInstitucion().toString() + "     Fecha de realización: " + ds.get(i).getFechaRealizacion().toString() + "       </h2> <br>");
+                                    out.println("<br><h2>Autor(es):  " + ds.get(i).getNombresAutores().toString() + "  <br> Sinodales: " + ds.get(i).getNombresSinodales().toString() + "   <br>  Director(es): " + ds.get(i).getNombresDirectores().toString() + "</h2>");
+                                    out.println("<h2>Unidades Académicas: " + ds.get(i).getInstitucion().toString() + "     Fecha de realización: " + ds.get(i).getFechaRealizacion().toString() + "       </h2> ");
                                     //out.println("<h2> <a href='"+ttd.get(i).getRutaTrabajoTerminal().toString()+"' target='_blank'>Documento Completo</a></h2><br>");
-                                    out.println("<h2> <a href='https://archivo.ucr.ac.cr/docum/tesis2.pdf' target='_blank'>Documento Completo</a></h2><br>");
-                                    out.println("<h2>Abstract</h2><br>");
+                                    out.println("<form method='post' action='../alumnos/consultaDeTesisJSP.jsp'><input type='hidden' value='"+ds.get(i).getNumIdentificador()+"' id='numI' name='numI'>");
+                                    out.println(" <input type='submit' class='sub' value='Visualizar'></form>");
+                                    out.println("<h2>Abstract</h2>");
                                     out.println("" + ds.get(i).getAbst().toString() + "<br>");
                                     out.println("'</td></tr>");
                                 }
@@ -189,11 +195,12 @@
                             } else {
                                 for (int i = 0; i < res.size(); i++) {
                                     out.println("<tr><td><h1>Titulo: " + res.get(i).getTitulo().toString() + "</h1>");
-                                    out.println("<br><h2>Autor(es):  " + res.get(i).getNombresAutores().toString() + "  <br> Sinodales: " + res.get(i).getNombresSinodales().toString() + "   <br>  Director(es): " + res.get(i).getNombresDirectores().toString() + "</h2><br>");
-                                    out.println("<h2>Unidades Académicas: " + res.get(i).getInstitucion().toString() + "     Fecha de realización: " + res.get(i).getFechaRealizacion().toString() + "       </h2> <br>");
+                                    out.println("<br><h2>Autor(es):  " + res.get(i).getNombresAutores().toString() + "  <br> Sinodales: " + res.get(i).getNombresSinodales().toString() + "   <br>  Director(es): " + res.get(i).getNombresDirectores().toString() + "</h2>");
+                                    out.println("<h2>Unidades Académicas: " + res.get(i).getInstitucion().toString() + "   |  Fecha de realización: " + res.get(i).getFechaRealizacion().toString() + "       </h2>");
                                     //out.println("<h2> <a href='"+ttd.get(i).getRutaTrabajoTerminal().toString()+"' target='_blank'>Documento Completo</a></h2><br>");
-                                    out.println("<h2> <a href='https://archivo.ucr.ac.cr/docum/tesis2.pdf' target='_blank'>Documento Completo</a></h2><br>");
-                                    out.println("<h2>Abstract</h2><br>");
+                                    out.println("<form method='post' action='../alumnos/consultaDeTesisJSP.jsp'><input type='hidden' value='"+res.get(i).getNumIdentificador()+"' id='numI' name='numI'>");
+                                    out.println(" <input type='submit' class='sub' value='Visualizar'></form>");
+                                     out.println("<h2>Abstract</h2>");
                                     out.println("" + res.get(i).getAbst().toString() + "<br>");
                                     out.println("'</td></tr>");
                                 }

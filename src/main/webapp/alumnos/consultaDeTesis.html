@@ -5,58 +5,68 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="../recursos/ico/monogramaSAPYENTIA.ico" type="image/x-icon" />
-        <link rel="stylesheet" href="../recursos/css/estiloConsulta.css" />
+        <link rel="stylesheet" href="../recursos/css/estiloConsultas.css" />
     </head>
     
-    <body>
-        <nav>
-            <header>SAPYENTIA</header>
-        </nav>
+    <body>  
+          <header>
+            <nav>
+                <a href="../index.html"><img src="../recursos/svg/logoSAPYENTIA.svg" alt="Ir a página de inicio" title="Ir a página de inicio" id="logoSAPYENTIA" /></a>
+            </nav>
+        </header>
+        <div id="cuerpo">
+            <main>
+            <div class="contenedor">
+                <div  id="informacionMetadatos">
+                    %
+                    <div class="metadatos" id="titulo">
+                            <p>TITULO:</p>
+                            <p>Titulo de la tesis</p>
+                    </div>
+
+                    <div class="metadatos" id="autor">
+                            <p>AUTOR (ES):</p>
+                            <p>Autor 1</p>
+                            <p>Autor 2</p>
+                    </div>
+
+                    <div class="metadatos" id="institucion">
+                            <p>INSTITUCIÓN:</p>
+                            <p>Nombre de la institución</p>
+
+                    </div>
+
+                    <div class="metadatos" id="director">
+                            <p>DIRECTOR (ES):</p>
+                            <p>Director 1</p>
+                            <p>Director 2</p>
+                    </div>
+
+                    <div class="metadatos" id="sinodal">
+                            <p>SINODALES:</p>
+                            <p>Sinodal 1</p>
+                            <p>Sinodal 2</p>
+                            <p>Sinodal 3</p>
+                    </div>
+
+                    <div class="metadatos" id="anio">
+                            <p>AÑO:</p>
+                            <p>####</p>
+                    </div>
+                </div>
+
+                <div id="visorpdf">
+                    <object type="application/pdf"
+                        data="https://archivo.ucr.ac.cr/docum/tesis2.pdf"
+                    ></object>
+                    <button type="button">Descargar PDF</button>
+                </div>
+            </div>
+            </main>
+        </div>       
         
-        <div class="contenedor">
-            <div  id="informacionMetadatos">
-                <div class="metadatos" id="titulo">
-                        <p>TITULO:</p>
-                        <p>Titulo de la tesis</p>
-                </div>
-                
-                <div class="metadatos" id="autor">
-                        <p>AUTOR (ES):</p>
-                        <p>Autor 1</p>
-                        <p>Autor 2</p>
-                </div>
-            
-                <div class="metadatos" id="institucion">
-                        <p>INSTITUCIÓN:</p>
-                        <p>Nombre de la institución</p>
-                    
-                </div>
-            
-                <div class="metadatos" id="director">
-                        <p>DIRECTOR (ES):</p>
-                        <p>Director 1</p>
-                        <p>Director 2</p>
-                </div>
-            
-                <div class="metadatos" id="sinodal">
-                        <p>SINODALES:</p>
-                        <p>Sinodal 1</p>
-                        <p>Sinodal 2</p>
-                        <p>Sinodal 3</p>
-                </div>
-            
-                <div class="metadatos" id="anio">
-                        <p>AÑO:</p>
-                        <p>####</p>
-                </div>
-            </div>
-            
-            <div id="visorpdf">
-                <object type="application/pdf"
-                    data="https://archivo.ucr.ac.cr/docum/tesis2.pdf"
-                ></object>
-                <button type="button">Descargar PDF</button>
-            </div>
-        </div>
+        <footer>
+            <p>© 2021 Paradoxoft.</p>
+        </footer>
     </body>
 </html>
