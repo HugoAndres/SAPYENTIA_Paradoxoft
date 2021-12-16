@@ -113,6 +113,7 @@
             </aside>
             <main>
                 <table align="right" id="bmm-table">
+                    <%-- 
                     <%
                         List<TrabajoTerminalDTO> ttd = new ArrayList<>();
                         TrabajoTerminalDAO t = new TrabajoTerminalDAO();
@@ -139,7 +140,7 @@
                                     //out.println("<h2> <a href='"+ttd.get(i).getRutaTrabajoTerminal().toString()+"' target='_blank'>Documento Completo</a></h2><br>");
                                     out.println("<form method='post' action='../../alumnos/consultaDeTesisJSP.jsp'><input type='hidden' value='"+ttd.get(i).getNumIdentificador()+"' id='numI' name='numI'>");
                                     out.println("<h2> <input type='submit' class='sub' value='Ver'></form>");
-                                    //out.println("<h2><p id='p1' >"+cad+"</p> <button onclick='copiarAlPortapapeles(p1)'>Citar</button>");
+                                    //out.println("<h2><p id='p1'>"+cad+"</p> <button onclick='copiarAlPortapapeles(p1)'>Citar</button>");
                                     out.println("<h2>Abstract:</h2>");
                                     out.println("" + ttd.get(i).getAbst().toString() + "<br>");
                                     out.println("'</td></tr>");
@@ -274,6 +275,145 @@
                             System.out.println("NullPointerException thrown!");
                         }
                     %>
+                    --%>
+                     <%! 
+                        String imprimir(List<TrabajoTerminalDTO> ttd,int i){
+                        String cad0="",cad="",cad2="",cad3="",cad4="",cad5="";                           
+                        //String cad= ttd.get(i).getNombresAutores().toString()+" \" "+ttd.get(i).getTitulo().toString()+"\""+" M.S. thesis, "+ttd.get(i).getInstitucion().toString()+" Ciudad de México, "+ ttd.get(i).getFechaRealizacion().toString();
+                        cad="<tr><td><h1>Titulo: " + ttd.get(i).getTitulo().toString() + "</h1>"+"<br><h2>Autor(es):  " + ttd.get(i).getNombresAutores().toString() + "  <br> Sinodales: " + ttd.get(i).getNombresSinodales().toString() + "   <br>  Director(es): " + ttd.get(i).getNombresDirectores().toString() + "</h2>";
+                        cad2="<h2>Unidades Académicas: " + ttd.get(i).getInstitucion().toString() + "     Fecha de realización: " + ttd.get(i).getFechaRealizacion().toString() +  "</h2>";
+                        //out.println("<h2> <a href='"+ttd.get(i).getRutaTrabajoTerminal().toString()+"' target='_blank'>Documento Completo</a></h2><br>");
+                        cad3="<form method='post' action='../../alumnos/consultaDeTesisJSP.jsp'><input type='hidden' value='"+ttd.get(i).getNumIdentificador()+"' id='numI' name='numI'>";
+                        cad4="<h2> <input type='submit' class='sub' value='Ver'></form>";
+                        //out.println("<h2><p id='p1'>"+cad+"</p> <button onclick='copiarAlPortapapeles(p1)'>Citar</button>");
+                        cad5="<h2>Abstract:</h2>"+ ttd.get(i).getAbst().toString() + "<br>"+"'</td></tr>";
+                        cad0=cad+cad2+cad3+cad4+cad5;
+                        return cad0;
+                        }
+                    %>
+                    <%
+                        List<TrabajoTerminalDTO> ttd = new ArrayList<>();
+                        TrabajoTerminalDAO t = new TrabajoTerminalDAO();                        
+                        String ti = "" + request.getParameter("text-tit");
+                        String aut = request.getParameter("text-aut");
+                        String ins = request.getParameter("text-ins");
+                        String pc = request.getParameter("text-pc");
+                        String dir = request.getParameter("text-dir");
+                        String sin = request.getParameter("text-sin");
+                        String ano = request.getParameter("text-ano");
+                        //out.println("<script>alert('"+ti+"');</script>");                
+                        try {
+                            ttd = t.buscaTrabajoTerminalPorTitulo(request.getParameter("text-tit").toString());
+                            if (ttd == null || ttd.isEmpty()) {
+                                out.println("<tr><td>No hay ningun elemento que coincida con la busqueda</td></tr>");
+                            } else {
+                                String cad="";
+                                for (int i = 0; i < ttd.size(); i++) {
+                                String cad2 = imprimir(ttd,i);
+                                cad=cad+cad2;
+                                }
+                                out.println(""+cad);
+                            }
+                        } catch (NullPointerException e) {
+                            System.out.println("NullPointerException thrown!");
+                        }
+                        try {
+                            ttd = t.buscaTrabajoTerminalPorAutores(request.getParameter("text-aut").toString());
+                            if (ttd == null || ttd.isEmpty()) {
+                                out.println("<tr><td>No hay ningun elemento que coincida con la busqueda</td></tr>");
+                            } else {
+                                String cad="";
+                                for (int i = 0; i < ttd.size(); i++) {
+                                String cad2 = imprimir(ttd,i);
+                                cad=cad+cad2;
+                                }
+                                out.println(""+cad);
+                            }
+                        } catch (NullPointerException e) {
+                            System.out.println("NullPointerException thrown!");
+                        }
+                        try {
+                            ttd = t.buscaTrabajoTerminalPorInstitucion(request.getParameter("text-ins").toString());
+                            if (ttd == null || ttd.isEmpty()) {
+                                out.println("<tr><td>No hay ningun elemento que coincida con la busqueda</td></tr>");
+
+                            } else {
+                                String cad="";
+                                for (int i = 0; i < ttd.size(); i++) {
+                                String cad2 = imprimir(ttd,i);
+                                cad=cad+cad2;
+                                }
+                                out.println(""+cad);
+                            }
+                        } catch (NullPointerException e) {
+                            System.out.println("NullPointerException thrown!");
+                        }
+                        try {
+                            ttd = t.buscaTrabajoTerminalPorPalabrasClave(request.getParameter("text-pc").toString());
+                            if (ttd == null || ttd.isEmpty()) {
+                                out.println("<tr><td>No hay ningun elemento que coincida con la busqueda</td></tr>");
+
+                            } else {
+                                String cad="";
+                                for (int i = 0; i < ttd.size(); i++) {
+                                String cad2 = imprimir(ttd,i);
+                                cad=cad+cad2;
+                                }
+                                out.println(""+cad);
+                            }
+                        } catch (NullPointerException e) {
+                            System.out.println("NullPointerException thrown!");
+                        }
+                        try {
+                            ttd = t.buscaTrabajoTerminalPorDirectores(request.getParameter("text-dir").toString());
+                            if (ttd == null || ttd.isEmpty()) {
+                                out.println("<tr><td>No hay ningun elemento que coincida con la busqueda</td></tr>");
+
+                            } else {
+                                String cad="";
+                                for (int i = 0; i < ttd.size(); i++) {
+                                String cad2 = imprimir(ttd,i);
+                                cad=cad+cad2;
+                                }
+                                out.println(""+cad);
+                            }
+                        } catch (NullPointerException e) {
+                            System.out.println("NullPointerException thrown!");
+                        }
+                        try {
+                            ttd = t.buscaTrabajoTerminalPorSinodales(request.getParameter("text-sin").toString());
+                            if (ttd == null || ttd.isEmpty()) {
+                                out.println("<tr><td>No hay ningun elemento que coincida con la busqueda</td></tr>");
+
+                            } else {
+                               String cad="";
+                                for (int i = 0; i < ttd.size(); i++) {
+                                String cad2 = imprimir(ttd,i);
+                                cad=cad+cad2;
+                                }
+                                out.println(""+cad);
+                            }
+                        } catch (NullPointerException e) {
+                            System.out.println("NullPointerException thrown!");
+                        }
+                        try {
+                            ttd = t.buscaTrabajoTerminalPorFechaRealizacion(request.getParameter("text-ano").toString());
+                            if (ttd == null || ttd.isEmpty()) {
+                                out.println("<tr><td>No hay ningun elemento que coincida con la busqueda</td></tr>");
+
+                            } else {
+                                String cad="";
+                                for (int i = 0; i < ttd.size(); i++) {
+                                String cad2 = imprimir(ttd,i);
+                                cad=cad+cad2;
+                                }
+                                out.println(""+cad);
+                            }
+                        } catch (NullPointerException e) {
+                            System.out.println("NullPointerException thrown!");
+                        }
+                    %>
+   
                 </table>
             </main>
         </div>
