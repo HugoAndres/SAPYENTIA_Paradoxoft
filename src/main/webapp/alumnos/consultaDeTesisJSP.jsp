@@ -51,10 +51,11 @@
                    out.println("<p>"+ta.getFechaRealizacion()+"</p></div>");
                
                 out.println("</div>");
-                out.println("<div id='visorpdf'><object type='application/pdf' data='https://archivo.ucr.ac.cr/docum/tesis2.pdf'></object><a href='' download='https://archivo.ucr.ac.cr/docum/tesis2.pdf'>Descargar PDF</a>");
-                out.println("</div>");
-
-                %>            
+                %>
+                <div id="visorpdf"><object type="application/pdf" data="${pageContext.request.contextPath}/ServletDevuelvePDF?ruta=<%=ta.getRutaTrabajoTerminal()%>"></object><a href='' download="https://archivo.ucr.ac.cr/docum/tesis2.pdf">Descargar PDF</a>
+                <%
+                    out.println("</div>");
+                %>
             </main>
         </div>       
         
