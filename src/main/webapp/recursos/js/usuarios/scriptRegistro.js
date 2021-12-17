@@ -7,7 +7,7 @@ function cambiarCampos(){
     let valorActual = document.querySelector("select").value;
     if(valorActual === "alumno"){
         ocultarEtiqueta("labelAcademia");
-        ocultarCampo("campoAcademia");
+        ocultarCampo("comboAcademia");
         ocultarEtiqueta("labelGrado");
         ocultarCampo("campoGrado");
         
@@ -19,9 +19,8 @@ function cambiarCampos(){
             ocultarEtiqueta("labelCarrera");
             ocultarCampo("campoCarrera");
             
-            
             mostrarEtiqueta("labelAcademia");
-            mostrarCampo("campoAcademia");
+            mostrarCampo("comboAcademia");
             mostrarEtiqueta("labelGrado");
             mostrarCampo("campoGrado");
         }
@@ -29,7 +28,7 @@ function cambiarCampos(){
             ocultarEtiqueta("labelCarrera");
             ocultarCampo("campoCarrera");
             ocultarEtiqueta("labelAcademia");
-            ocultarCampo("campoAcademia");
+            ocultarCampo("comboAcademia");
             ocultarEtiqueta("labelGrado");
             ocultarCampo("campoGrado");
         }

@@ -15,6 +15,10 @@ public class PersonalAdministrativo extends Usuario{
         super();
     }
     
+    public PersonalAdministrativo(Usuario usuario){
+        super(usuario.getIdentificador(), usuario.getNombres(), usuario.getApellidos(), usuario.getInstitucion(), usuario.getUnidadAcademica(), usuario.getCorreo(), usuario.getContra(), usuario.getImagen());
+    }
+    
     @Override
     public String toString() {
         return super.toString();

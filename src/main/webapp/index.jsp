@@ -1,3 +1,10 @@
+<%-- 
+    Document   : index
+    Created on : 17 dic. 2021, 11:08:38
+    Author     : gmelo
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es-419" dir="ltr">
     <head>

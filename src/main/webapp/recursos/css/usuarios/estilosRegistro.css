@@ -35,6 +35,28 @@ main h1{
     background-color: var(--color-secundario);
 }
 
+main p.mensajeExito{
+    /*Caja*/
+    padding: 10px;
+    border-radius: 10px;
+    /*Colores*/
+    color: #009933;
+    background-color: #99ff99;
+    /*Texto*/
+    text-align: center;
+}
+
+main p.mensajeError{
+    /*Caja*/
+    padding: 10px;
+    border-radius: 10px;
+    /*Colores*/
+    color: #cc0000;
+    background-color: #ff6666;
+    /*Texto*/
+    text-align: center;
+}
+
 main div{
     /*Display*/
     display: flex;
@@ -135,7 +157,7 @@ main form input, main form select{
 }
 
 #labelCarrera, #campoCarrera,
-#labelAcademia, #campoAcademia,
+#labelAcademia, #comboAcademia,
 #labelGrado, #campoGrado{
     /*Display*/
     display: none;

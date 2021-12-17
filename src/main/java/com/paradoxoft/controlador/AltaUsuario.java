@@ -48,60 +48,74 @@ public class AltaUsuario extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            String nombre = request.getParameter("campoNombres");
-            String apellidos = request.getParameter("campoApellidos");
-            String institucion = request.getParameter("campoInstitucion");
-            String unidadAcademica = request.getParameter("campoUnidadAcademica");
-            String email = request.getParameter("email");
-            String contrasenia = request.getParameter("campoContrasenia");
-            String tipoUsuario = request.getParameter("comboCategoria");
+            if (request.getCharacterEncoding() == null)
+                request.setCharacterEncoding("UTF-8");
             
+            String identificador = request.getParameter("identificador");
+            String nombre = request.getParameter("nombres");
+            String apellidos = request.getParameter("apellidos");
+            String institucion = request.getParameter("institucion");
+            String unidadAcademica = request.getParameter("unidadAcademica");
+            String email = request.getParameter("email");
+            String contrasenia = request.getParameter("contrasenia");
+            String imagen = "http://assets.stickpng.com/thumbs/585e4bf3cb11b227491c339a.png";
+            String tipoUsuario = request.getParameter("valorComboCategoria");
             if(nombre != null && apellidos != null && institucion != null && unidadAcademica != null &&
                 email != null && contrasenia != null && tipoUsuario != null){
                 try{
                     Usuario nuevoUsuario =  new Usuario();
+                    nuevoUsuario.setIdentificador(identificador);
                     nuevoUsuario.setNombres(nombre);
                     nuevoUsuario.setApellidos(apellidos);
                     nuevoUsuario.setInstitucion(institucion);
                     nuevoUsuario.setUnidadAcademica(unidadAcademica);
                     nuevoUsuario.setCorreo(email);
                     nuevoUsuario.setContra(contrasenia);
+                    nuevoUsuario.setImagen(imagen);
                     switch(tipoUsuario){
                         case "alumno":
-                            String carrera = request.getParameter("campoCarrera");
+                            String carrera = request.getParameter("carrera");
                             if(carrera != null){
                                 AlumnoDAO daoAlumno = new AlumnoDAO();
-                                Alumno nuevoAlumno = (Alumno) nuevoUsuario;
+                                Alumno nuevoAlumno = new Alumno(nuevoUsuario);
                                 nuevoAlumno.setCarrera(carrera);
                                 daoAlumno.guardaAlumno(nuevoAlumno);
+                                mostrarExito(request, response);
                             }
                             else
                                 mostrarError(request, response);
                             break;
                         case "docente":
-                            int academia = Integer.parseInt(request.getParameter("campoAcademia"));
-                            String grado = request.getParameter("campoGrado");
+                            int academia = Integer.parseInt(request.getParameter("valorComboAcademia"));
+                            String grado = request.getParameter("grado");
                             if(grado != null){
                                 DocenteDAO daoDocente = new DocenteDAO();
-                                Docente nuevoDocente = (Docente) nuevoUsuario;
+                                Docente nuevoDocente = new Docente(nuevoUsuario);
                                 nuevoDocente.setAcademiaDocente(academia);
                                 nuevoDocente.setGrado(grado);
                                 daoDocente.guardaDocente(nuevoDocente);
+                                mostrarExito(request, response);
                             }
                             else
                                 mostrarError(request, response);
                             break;
                         case "personalAdministrativo":
+                            PersonalAdministrativo nuevoPersonalAdministrativo = new PersonalAdministrativo(nuevoUsuario);
                             PersonalAdministrativoDAO daoPersonalAdministrativo = new PersonalAdministrativoDAO();
-                            daoPersonalAdministrativo.guardaPersonalAdministrativo((PersonalAdministrativo) nuevoUsuario);
+                            daoPersonalAdministrativo.guardaPersonalAdministrativo(nuevoPersonalAdministrativo);
+                            mostrarExito(request, response);
                             break;
                         case "personalAcademico":
+                            PersonalAcademico nuevoPersonalAcademico = new PersonalAcademico(nuevoUsuario);
                             PersonalAcademicoDAO daoPersonalAcademico = new PersonalAcademicoDAO();
-                            daoPersonalAcademico.guardaPersonalAcademico((PersonalAcademico) nuevoUsuario);
+                            daoPersonalAcademico.guardaPersonalAcademico(nuevoPersonalAcademico);
+                            mostrarExito(request, response);
                             break;
                         case "personalBibliotecario":
+                            PersonalBibliotecario nuevoPersonalBibliotecario = new PersonalBibliotecario(nuevoUsuario);
                             PersonalBibliotecarioDAO daoPersonalBibliotecario = new PersonalBibliotecarioDAO();
-                            daoPersonalBibliotecario.guardaPersonalBibliotecario((PersonalBibliotecario) nuevoUsuario);
+                            daoPersonalBibliotecario.guardaPersonalBibliotecario(nuevoPersonalBibliotecario);
+                            mostrarExito(request, response);
                             break;
                         default:
                             mostrarError(request, response);
@@ -158,6 +172,11 @@ public class AltaUsuario extends HttpServlet {
     
     private void mostrarError(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         RequestDispatcher rd = request.getRequestDispatcher("usuarios/registro.jsp?error=true");
+        rd.forward(request, response);
+    }
+    
+    private void mostrarExito(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        RequestDispatcher rd = request.getRequestDispatcher("usuarios/registro.jsp?exito=true");
         rd.forward(request, response);
     }
 }

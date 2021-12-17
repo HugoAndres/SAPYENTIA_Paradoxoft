@@ -16,6 +16,10 @@ public class Alumno extends Usuario{
     public Alumno(){
         super();
     }
+    
+    public Alumno(Usuario usuario){
+        super(usuario.getIdentificador(), usuario.getNombres(), usuario.getApellidos(), usuario.getInstitucion(), usuario.getUnidadAcademica(), usuario.getCorreo(), usuario.getContra(), usuario.getImagen());
+    }
 
     public Alumno(String carrera) {
         super();

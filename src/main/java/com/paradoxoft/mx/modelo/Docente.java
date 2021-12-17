@@ -17,6 +17,10 @@ public class Docente extends Usuario{
     public Docente(){
         super();
     }
+    
+    public Docente(Usuario usuario){
+        super(usuario.getIdentificador(), usuario.getNombres(), usuario.getApellidos(), usuario.getInstitucion(), usuario.getUnidadAcademica(), usuario.getCorreo(), usuario.getContra(), usuario.getImagen());
+    }
 
     public Docente(int academiaDocente, String grado) {
         super();

@@ -23,6 +23,17 @@ public class Usuario {
     public Usuario(){
         
     }
+
+    public Usuario(String identificador, String nombres, String apellidos, String institucion, String unidadAcademica, String correo, String contra, String imagen) {
+        this.identificador = identificador;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.institucion = institucion;
+        this.unidadAcademica = unidadAcademica;
+        this.correo = correo;
+        this.contra = contra;
+        this.imagen = imagen;
+    }
     
     public String getIdentificador() {
         return identificador;
