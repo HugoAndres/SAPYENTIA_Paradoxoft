@@ -178,18 +178,21 @@ main{
     /*Caja*/
     padding: 40px;
 }
-/*
+
 .miContenedorDeBusquedas{
-    
+    background-color: rgba(232,184,251,1);
+    padding: 0px;
 }
 
 
-.miTablaDeBusquedas > tbody > tr{
-    transition: background-image 0.2s, color 0.2s, outline 0.2s;
+.miTablaDeBusquedas > tbody > tr > td{
+    transition: background-image 0.5s, color 0.5s;
     margin: 5px;
+    border-bottom: black 2px solid;
+    padding: 50px;
 }
 
-.miTablaDeBusquedas > tbody > tr:hover{
+.miTablaDeBusquedas > tbody > tr > td:hover{
     color:indigo;
-    background-image: radial-gradient(circle, rgba(224,227,230,1) 21%, rgba(145,116,157,1) 100%);
-}*/
+    background-image: radial-gradient(circle, rgba(224,227,230,1) 21%, rgba(232,184,251,1) 100%);
+}
