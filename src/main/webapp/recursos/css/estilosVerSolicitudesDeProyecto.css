@@ -46,8 +46,9 @@ main > p{
 }
 
 #contenedorSolicitudes{
-    /*Texto*/
+    /*Display*/
     display: flex;
+    /*Texto*/
     flex-wrap: wrap;
     row-gap: 20px;
 }
@@ -56,8 +57,19 @@ main > p{
     /*Caja*/
     width: 100%;
     padding: 20px;
+    border-style: solid;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 15px;
+    box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+    /*Texto*/
+    text-shadow: 2px 2px 5px black;
+    color: white;
     /*Colores*/
-    background-color: var(--color-terciario);
+    background-color: rgba(83, 72, 188, 0.7);
+    border-color: var(--color-cuaternario);
 }
 
 .contenedorSolicitud p{
@@ -68,15 +80,63 @@ main > p{
 .contenedorSolicitud .tituloSolicitud{
     /*Texto*/
     font-weight: 600;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 }
 
 .contenedorSolicitud .atributosSolicitud{
+    /*Caja*/
+    margin-top: 20px;
     /*Texto*/
     text-align: end;
 }
 
-.contenedorSolicitud button, #divOculto form button{
+.contenedorSolicitud .atributosExtraSolicitud{
+    /*Caja*/
+    margin-top: 10px;
+    /*Texto*/
+    font-size: 0.8rem;
+}
+
+.contenedorSolicitud .atributosSolicitud > span,
+.contenedorSolicitud .atributosExtraSolicitud > span{
+    /*Display*/
+    display: block;
+}
+
+.contenedorSolicitud .atributoSolicitudNegrita{
+    /*Texto*/
+    font-weight: 700;
+}
+
+.contenedorSolicitud .botonVerMas,
+.contenedorSolicitud .botonVerMenos{
+    /*Display*/
+    display: block;
+    margin-left: auto;
+    /*Caja*/
+    border-style: solid;
+    border-width: 0px;
+    padding: 0px;
+    margin-top: 10px;
+    /*Colores*/
+    color: var(--color-cuaternario);
+    background-color: transparent;
+    /*Texto*/
+    font-family: var(--fuente-primaria), var(--fuente-primaria-alt1), var(--fuente-primaria-alt2);
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+}
+
+.contenedorSolicitud .botonVerMas:hover,
+.contenedorSolicitud .botonVerMenos:hover{
+    /*Display*/
+    cursor: pointer;
+    /*Colores*/
+    color: var(--color-primario);
+}
+
+.contenedorSolicitud .botonIniciarProyecto,
+.contenedorSolicitud .botonVerPropuesta{
     /*Caja*/
     margin-top: 20px;
     padding: 8px;
@@ -87,7 +147,16 @@ main > p{
     font-family: var(--fuente-primaria), var(--fuente-primaria-alt1), var(--fuente-primaria-alt2);
 }
 
-.contenedorSolicitud button:hover, #divOculto form button:hover{
+@media (max-width: 350px){
+    .contenedorSolicitud .botonIniciarProyecto,
+    .contenedorSolicitud .botonVerPropuesta{
+        /*Caja*/
+        width: 100%;
+    }
+}
+
+.contenedorSolicitud .botonIniciarProyecto:hover,
+.contenedorSolicitud .botonVerPropuesta:hover{
     /*Display*/
     cursor: pointer;
     /*Colores*/
@@ -109,9 +178,11 @@ main > p{
 
 @media (max-width: 800px){
     #contenedorPDF{
-        width: 90%;
+        /*Display*/
         flex-basis: auto;
         flex-grow: 0;
+        /*Caja*/
+        width: 90%;
         margin-top: 0px;
         margin-right: 0px;
     }
@@ -148,10 +219,18 @@ main > p{
     margin: 0px;
 }
 
-.tituloForma{
+#divOculto .tituloForma{
     /*Texto*/
     font-weight: 700;
     font-size: 1.3rem;
+    text-align: center;
+}
+
+#divOculto .descForma{
+    /*Caja*/
+    margin-top: 20px;
+    /*Texto*/
+    text-align: justify;
 }
 
 #divOculto form{
@@ -160,8 +239,9 @@ main > p{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    row-gap: 10px;
     /*Caja*/
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 #divOculto form label, #divOculto form input{
@@ -174,11 +254,26 @@ main > p{
     box-sizing: border-box;
 }
 
+@media (max-width: 450px){
+    #divOculto form label, #divOculto form input{
+        width: 100%;
+    }
+}
+
 #divOculto form label{
     /*Text*/
     text-align: end;
     /*Caja*/
     padding-right: 10px;
+}
+
+@media (max-width: 450px){
+    #divOculto form label{
+        /*Text*/
+        text-align: start;
+        /*Caja*/
+        padding-right: 0px;
+    }
 }
 
 #divOculto form input{
@@ -201,4 +296,17 @@ main > p{
     outline-offset: -2px;
     outline-style: dashed;
     outline-width: 1px;
+}
+
+#divOculto input[type="submit"]{
+    /*Display*/
+    white-space: normal;
+}
+
+ #divOculto input[type="submit"]:hover{
+    /*Display*/
+    cursor: pointer;
+    /*Colores*/
+    color: white;
+    background-color: var(--color-terciario);
 }
