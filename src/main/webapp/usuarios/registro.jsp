@@ -1,3 +1,9 @@
+<%-- 
+    Document   : resgistro
+    Created on : 17 dic. 2021, 5:10:25
+    Author     : gmelo
+--%>
+
 <!DOCTYPE html>
 <html lang="es-419" dir="ltr">
     <head>
@@ -12,51 +18,51 @@
     <body>
         <div id="divOculto">
             <div>
-                <p class="tituloForma">Inicia sesiÃ³n en SAPYENTIA</p>
+                <p class="tituloForma">Inicia sesión en SAPYENTIA</p>
                 <p class="descForma">Usa los datos que proporcionaste para registrarte.</p>
                 <form action="indefinido.html" method="post" target="_self">
-                    <label for="campoLoginEmail">Correo electrÃ³nico:</label>
+                    <label for="campoLoginEmail">Correo electrónico:</label>
                     <input type="text" name="titulo" id="campoLoginEmail" required="required" />
-                    <label for="campoLoginContrasenia">ContraseÃ±a:</label>
+                    <label for="campoLoginContrasenia">Contraseña:</label>
                     <input type="text" name="titulo" id="campoLoginContrasenia" required="required" />
-                    <input type="submit" value="Iniciar sesiÃ³n" />
+                    <input type="submit" value="Iniciar sesión" />
                 </form>
             </div>
         </div>
         <header>
             <nav>
-                <a href="../index.html"><img src="../recursos/svg/logoSAPYENTIA.svg" alt="Ir a pÃ¡gina de inicio" title="Ir a pÃ¡gina de inicio" id="logoSAPYENTIA" /></a>
-                <a class="vinculoSinImagen" href="registro.html">Registrarse</a>
-                <button>Iniciar sesiÃ³n</button>
+                <a href="../index.html"><img src="../recursos/svg/logoSAPYENTIA.svg" alt="Ir a página de inicio" title="Ir a página de inicio" id="logoSAPYENTIA" /></a>
+                <a class="vinculoSinImagen" href="registro.jsp">Registrarse</a>
+                <button>Iniciar sesión</button>
             </nav>
         </header>
         <div id="cuerpo">
             <main>
-                <h1>RegÃ­strate en SAPYENTIA</h1>
+                <h1>Regístrate en SAPYENTIA</h1>
                 <p>Solo llena el siguiente formulario y nosotros haremos el resto.</p>
                 <div>
                     <img src="../recursos/svg/usuario.svg" alt="Usuario" title="Usuario" id="imgUsuario" />
-                    <form action="" method="post" target="_self" autocomplete="off">
+                    <form action="AltaUsuario" method="post" target="_self" autocomplete="off">
                         <label for="comboCategoria">Quiero registrarme como:</label>
                         <select id="comboCategoria" name="valorClaveCategoria" required="required">
-                            <option value="">Seleccione una opciÃ³n...</option>
+                            <option value="">Seleccione una opción...</option>
                             <option value="alumno">Alumno</option>
                             <option value="docente">Docente</option>
                             <option value="personalAdministrativo">Personal administrativo</option>
-                            <option value="personalAcademico">Personal acadÃ©mico</option>
+                            <option value="personalAcademico">Personal académico</option>
                             <option value="personalBibliotecario">Personal bibliotecario</option>
                         </select>
                         <label for="campoNombres">Nombres:</label>
                         <input type="text" name="nombres" id="campoNombres" required="required" />
                         <label for="campoApellidos">Apellidos:</label>
                         <input type="text" name="apellidos" id="campoApellidos" required="required" />
-                        <label for="campoInstitucion">InstituciÃ³n:</label>
+                        <label for="campoInstitucion">Institución:</label>
                         <input type="text" name="institucion" id="campoInstitucion" required="required" />
-                        <label for="campoUnidadAcademica">Unidad acadÃ©mica:</label>
+                        <label for="campoUnidadAcademica">Unidad académica:</label>
                         <input type="text" name="unidadAcademica" id="campoUnidadAcademica" required="required" />
-                        <label for="campoEmail">Correo electrÃ³nico:</label>
+                        <label for="campoEmail">Correo electrónico:</label>
                         <input type="email" name="email" id="campoEmail" required="required" />
-                        <label for="campoContrasenia">ContraseÃ±a:</label>
+                        <label for="campoContrasenia">Contraseña:</label>
                         <input type="password" name="contrasenia" id="campoContrasenia" required="required" />
                         
                         <label for="campoCarrera" id="labelCarrera">Carrera:</label>
@@ -68,11 +74,21 @@
                         <input type="text" name="grado" id="campoGrado" required="required" />
                         <input type="submit" value="Registrar cuenta" />
                     </form>
+<%
+    String error = request.getParameter("error");
+    if(error != null){
+        if(error.equals("true")){
+%>
+                    <p>Ha ocurrido un error al registrar el usuario. Inténtelo de nuevo.</p>
+<%
+        }
+    }
+%>
                 </div>
             </main>
         </div>
         <footer>
-            <p>Â© 2021 Paradoxoft.</p>
+            <p>© 2021 Paradoxoft.</p>
         </footer>
     </body>
 </html>
