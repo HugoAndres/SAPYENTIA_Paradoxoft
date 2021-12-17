@@ -32,6 +32,8 @@ public class TrabajoTerminalDAO {
     private static final String GUARDA = "select spGuardaTrabajoTerminal(?,?,?::date,?,?,?,?,?,?)";
     private static final String GUARDA_HISTORICO = "select spGuardaTrabajoTerminalHistorico(?,?,?::date,?,?,?,?,?,?,?,?,?)";
     private static final String BORRA = "select spBorraTrabajoTerminal(?)";
+    private static final String ACTUALIZA_RUTA_TT = "select spActualizaRutaTrabajoTerminalTrabajoTerminal(?,?)";
+    private static final String ACTUALIZA_RUTA_P = "select spActualizaRutaPropuestaTrabajoTerminal(?,?)";
     private static final String AGREGA_AUTOR = "select spAgregaAutorTrabajoTerminal(?, ?)";
     private static final String AGREGA_DIRECTOR = "select spAgregaDirectorTrabajoTerminal(?, ?, ?)";
     private static final String AGREGA_SINODAL = "select spAgregaSinodalTrabajoTerminal(?, ?)";
@@ -175,6 +177,66 @@ public class TrabajoTerminalDAO {
             
             ps = con.prepareStatement(BORRA);
             ps.setString(1, numIdentificador);
+            ps.executeQuery();
+            
+        } catch(SQLException ex){
+            Logger.getLogger(TrabajoTerminalDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return -1;
+        }finally{
+            if(ps != null){
+                ps.close();
+            }
+            if(this.con != null){
+                AlbercaDeConexiones.obtenInstancia().retirarConexion(this.con);
+            }
+        }
+        
+        return 1;
+    }
+    
+    public int actualizaRutaTrabajoTerminal(String numIdentificador, String url) throws SQLException{
+        conectar();
+        PreparedStatement ps = null;
+        try{
+            
+            if(numIdentificador == null){
+                System.out.println("EL IDENTIFICADOR ES NULO");
+                return -3;
+            }
+            
+            ps = con.prepareStatement(ACTUALIZA_RUTA_TT);
+            ps.setString(1, numIdentificador);
+            ps.setString(2, url);
+            ps.executeQuery();
+            
+        } catch(SQLException ex){
+            Logger.getLogger(TrabajoTerminalDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return -1;
+        }finally{
+            if(ps != null){
+                ps.close();
+            }
+            if(this.con != null){
+                AlbercaDeConexiones.obtenInstancia().retirarConexion(this.con);
+            }
+        }
+        
+        return 1;
+    }
+    
+    public int actualizaRutaPropuesta(String numIdentificador, String url) throws SQLException{
+        conectar();
+        PreparedStatement ps = null;
+        try{
+            
+            if(numIdentificador == null){
+                System.out.println("EL IDENTIFICADOR ES NULO");
+                return -3;
+            }
+            
+            ps = con.prepareStatement(ACTUALIZA_RUTA_P);
+            ps.setString(1, numIdentificador);
+            ps.setString(2, url);
             ps.executeQuery();
             
         } catch(SQLException ex){
@@ -1106,7 +1168,20 @@ public class TrabajoTerminalDAO {
             Logger.getLogger(AcademiaDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         */
-        
+        /*
+        TrabajoTerminalDAO dao =  new TrabajoTerminalDAO();
+        try {
+            dao.actualizaRutaPropuesta("ABCDEFG","C://propuestaej1x.pdf");
+        } catch (SQLException ex) {
+            Logger.getLogger(AcademiaDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        */
+        TrabajoTerminalDAO dao =  new TrabajoTerminalDAO();
+        try {
+            dao.actualizaRutaTrabajoTerminal("ABCDEFG","C://trabajoterminalej1x.pdf");
+        } catch (SQLException ex) {
+            Logger.getLogger(AcademiaDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }
     

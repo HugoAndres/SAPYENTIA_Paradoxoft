@@ -178,3 +178,18 @@ main{
     /*Caja*/
     padding: 40px;
 }
+/*
+.miContenedorDeBusquedas{
+    
+}
+
+
+.miTablaDeBusquedas > tbody > tr{
+    transition: background-image 0.2s, color 0.2s, outline 0.2s;
+    margin: 5px;
+}
+
+.miTablaDeBusquedas > tbody > tr:hover{
+    color:indigo;
+    background-image: radial-gradient(circle, rgba(224,227,230,1) 21%, rgba(145,116,157,1) 100%);
+}*/

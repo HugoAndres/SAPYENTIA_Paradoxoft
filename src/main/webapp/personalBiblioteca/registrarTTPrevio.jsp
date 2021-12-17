@@ -1,17 +1,24 @@
+<%-- 
+    Document   : registrarTTPrevio
+    Created on : 17 dic. 2021, 05:33:37
+    Author     : user
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es-419" dir="ltr">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Registrar un trabajo terminal previo | SAPYENTIA</title>
-        <link rel="shortcut icon" href="../recursos/ico/monogramaSAPYENTIA.ico" type="image/x-icon" />
-        <link rel="stylesheet" href="../recursos/css/estilosFormaSolicitud.css" />
-        <script src="../recursos/js/scriptFormaTTPrevio.js"></script>
+        <link rel="shortcut icon" href="${pageContext.request.contextPath}/recursos/ico/monogramaSAPYENTIA.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/recursos/css/estilosFormaSolicitud.css" />
+        <script src="${pageContext.request.contextPath}/recursos/js/scriptFormaTTPrevio.js"></script>
     </head>
     <body>
         <header>
             <nav>
-                <a href="../index.html"><img src="../recursos/svg/logoSAPYENTIA.svg" alt="Ir a página de inicio" title="Ir a página de inicio" id="logoSAPYENTIA" /></a>
+                <a href="${pageContext.request.contextPath}/index.html"><img src="${pageContext.request.contextPath}/recursos/svg/logoSAPYENTIA.svg" alt="Ir a página de inicio" title="Ir a página de inicio" id="logoSAPYENTIA" /></a>
             </nav>
         </header>
         <div id="cuerpo">
@@ -22,8 +29,9 @@
                     consulta por los usuarios de SAPYENTIA. Deberás incluir todos los metadatos que identifican al trabajo
                     terminal y asegurarte de que el archivo que envíes sea del formato PDF.
                 </p>
+                <p>${mensaje}</p>
                 <div>
-                    <form action="../AltaTrabajoTerminalPrevio" method="post" target="_self">
+                    <form action="${pageContext.request.contextPath}/AltaTrabajoTerminalPrevio" method="post" target="_self" enctype="multipart/form-data">
                         <label for="campoTitulo">Título del trabajo terminal:</label>
                         <input type="text" name="titulo" id="campoTitulo" class="inputNormal" required="required" />
                         <label for="campoNumId">Número identificador:</label>
@@ -65,12 +73,12 @@
                             </div>
                         </div>
                         <label for="campoRutaArchivoPropuesta">Archivo de propuesta:</label>
-                        <input type="file" name="rutaArchivoPropuesta" id="campoRutaArchivoPropuesta" accept="application/pdf" class="inputNormal" required="required" />
+                        <input type="file" name="rutaArchivoPropuesta" id="campoRutaArchivoPropuesta" accept=".pdf" class="inputNormal" required="required" />
                         <label for="campoRutaArchivoTT">Archivo de trabajo terminal:</label>
-                        <input type="file" name="rutaArchivoTT" id="campoRutaArchivoTT" accept="application/pdf" class="inputNormal" required="required" />
+                        <input type="file" name="rutaArchivoTT" id="campoRutaArchivoTT" accept=".pdf" class="inputNormal" required="required" />
                         <input type="submit" id="botonSubmit" value="Enviar" />
                     </form>
-                    <img src="../recursos/svg/libro.svg" alt="Sobre de mensaje" title="Solicitud de proyecto de trabajo terminal" id="sobreDeMensaje" />
+                    <img src="${pageContext.request.contextPath}/recursos/svg/libro.svg" alt="Sobre de mensaje" title="Solicitud de proyecto de trabajo terminal" id="sobreDeMensaje" />
                 </div>
             </main>
         </div>

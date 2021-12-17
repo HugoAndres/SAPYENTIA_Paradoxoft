@@ -111,8 +111,8 @@
                     </li>
                 </ul>
             </aside>
-            <main>
-                <table align="right" id="bmm-table">
+            <main class = "miContenedorDeBusquedas">
+                <table align="right" id="bmm-table" class = "miTablaDeBusquedas">
                     <%-- 
                     <%
                         List<TrabajoTerminalDTO> ttd = new ArrayList<>();
